@@ -1,0 +1,90 @@
+//- -----------------------------------------------------------------|
+//- DEFAULT LAYOUT
+//- -----------------------------------------------------------------|
+//- Contains all includes, blocks, & variables for the scaffolding of our default layout.
+
+//- VARIABLES
+//- ---------------------------------|
+block variables
+
+//- MIXINS
+//- ---------------------------------|
+include /mixins/_mixins
+
+doctype html
+html(class='no-js' lang='en')
+	head
+		//- PAGE TITLE
+		//- -------------------------|
+		title= pageTitle
+
+		//- <HEAD>
+		//- -------------------------|
+		include /layouts/default/inc/_head
+
+		//- META TAGS
+		//- -------------------------|
+		meta(
+			name='description'
+			content= pageDesc
+		)
+		meta(
+			property='og:site_name'
+			content= locals.site.name
+		)
+		meta(
+			property='og:title'
+			content= ogTitle
+		)
+		meta(
+			property='og:description'
+			content= ogDesc
+		)
+		meta(
+			property='og:url'
+			content= pageUrl
+		)
+		meta(
+			property='og:image'
+			content= pageImage
+		)
+		meta(
+			property='twitter:card'
+			content='summary'
+		)
+
+		//- PAGE SPECIFIC <HEAD>
+		//- -------------------------|
+		block head
+	body
+		//- PAGE SPECIFIC HEADER
+		//- -------------------------|
+		block header
+
+		//- <HEADER> PARTIAL
+		//- -------------------------|
+		include /layouts/default/components/_header
+
+		//- <MAIN#CONTENT> BLOCK
+		//- -------------------------|
+		block content
+
+		//- <FOOTER> PARTIAL
+		//- -------------------------|
+		include /layouts/default/components/_footer
+
+		//- PAGE SPECIFIC FOOTER
+		//- -------------------------|
+		block footer
+
+		//- OUTDATED BROWSER
+		//- -------------------------|
+		include /layouts/default/components/_outdated
+
+		//- JS + ANALYTICS + DEVOPTS
+		//- -------------------------|
+		include /layouts/default/inc/_foot
+
+		//- PAGE SPECIFIC FOOT
+		//- -------------------------|
+		block foot

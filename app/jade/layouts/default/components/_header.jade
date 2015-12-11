@@ -1,0 +1,29 @@
+//- -----------------------------------------------------------------|
+//- COMPONENT: HEADER
+//- -----------------------------------------------------------------|
+//- Contains all HTML for the header component.
+
+- var name = 'header'
+
+//- -----------------------------------------------------------------|
+include /mixins/_mixins
++devHead(name)
+//- -----------------------------------------------------------------|
+
+header.header(role='banner')
+	a.sr-only.sr-only-focusable(href='#content') Skip to main content
+	nav.header-nav(role='navigation')
+		ul
+			li
+				a(href='#') Nav Item
+			li
+				a(href='#') Nav Item
+			li
+				a(href='#') Nav Item
+			li
+				a(href='#') Nav Item
+
+
+//- -----------------------------------------------------------------|
++devFoot(name)
+//- -----------------------------------------------------------------|

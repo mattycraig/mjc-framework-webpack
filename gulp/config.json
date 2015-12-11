@@ -1,0 +1,72 @@
+{
+	"clean": {
+		"default": [
+			".tmp",
+			"dist"
+		],
+		"styles": [
+			"dist/css"
+		],
+		"scripts": [
+			"dist/js/app.js"
+		]
+	},
+	"styles": {
+		"src": {
+			"scss": "app/scss/**/*.scss"
+		},
+		"dest": {
+			"dev": ".tmp/css",
+			"prod": "dist/css"
+		}
+	},
+	"views": {
+		"src": {
+			"dev": "app/jade/**/*.jade",
+			"filter": [
+				"*",
+				"!app/jade/**/_*.jade"
+			]
+		},
+		"dest": {
+			"dev": ".tmp",
+			"prod": "dist"
+		}
+	},
+	"copy": {
+		"src": {
+			"root": [
+				"app/*.*",
+				"!app/**/*.html",
+				"!app/**/*.jade"
+			],
+			"fonts": {
+				"npm": [
+					"node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2}"
+				],
+				"app": "app/fonts/**/*"
+			}
+		},
+		"dest": {
+			"root": {
+				"dev": ".tmp",
+				"prod": "dist"
+			},
+			"fonts": {
+				"dev": ".tmp/css/fonts",
+				"prod": "dist/css/fonts"
+			}
+		}
+	},
+	"images": {
+		"src": "app/images/**/*",
+		"dest": "dist/images"
+	},
+	"webpack": {
+		"src": "app/js/app.js",
+		"dest": {
+			"dev": "app/js",
+			"prod": "dist/js"
+		}
+	}
+}

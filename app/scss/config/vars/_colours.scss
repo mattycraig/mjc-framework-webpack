@@ -1,0 +1,121 @@
+// -----------------------------------------------------------------|
+//	COLOUR VARIABLES
+// -----------------------------------------------------------------|
+// Contains all colour variables available throughout our project.
+
+// DEFAULTS
+// ---------------------------------|
+$color-white: #fff;
+$color-black: #000;
+$color-success: #5cb85c !default;
+$color-info: #5bc0de !default;
+$color-warning: #f0ad4e !default;
+$color-danger: #d9534f !default;
+
+// GREYS
+// ---------------------------------|
+$color-00: $color-black;
+$color-11: #111;
+$color-22: #222;
+$color-33: #333;
+$color-44: #444;
+$color-55: #555;
+$color-66: #666;
+$color-77: #777;
+$color-88: #888;
+$color-99: #999;
+$color-aa: #aaa;
+$color-bb: #bbb;
+$color-cc: #ccc;
+$color-dd: #ddd;
+$color-ee: #eee;
+$color-ff: $color-white;
+
+// SOCIAL MEDIA
+// ---------------------------------|
+$color-facebook: #3b5998;
+$color-twitter: #00aced;
+$color-googleplus: #dd4b39;
+$color-youtube: #b00;
+$color-linkedin: #007bb6;
+$color-pinterest: #cb2027;
+$color-instagram: #517fa4;
+$color-flickr: #ff0084;
+$color-tumblr: #32506d;
+$color-vine: #00bf8f;
+
+// THEME
+// ---------------------------------|
+$color-alpha: $color-black !default;
+$color-alpha-low: darken($color-alpha, 10%);
+$color-alpha-high: lighten($color-alpha, 10%);
+
+$color-beta: $color-black !default;
+$color-beta-low: darken($color-beta, 10%);
+$color-beta-high: lighten($color-beta, 10%);
+
+$color-gamma: $color-black !default;
+$color-gamma-low: darken($color-gamma, 10%);
+$color-gamma-high: lighten($color-gamma, 10%);
+
+$color-delta: $color-black !default;
+$color-delta-low: darken($color-delta, 10%);
+$color-delta-high: lighten($color-delta, 10%);
+
+// COLOUR MAP FOR THEME MODIFIERS
+// ---------------------------------|
+$themeMap: (
+	alpha: ($color-alpha, $color-alpha-high, $color-alpha-low),
+	beta: ($color-beta, $color-beta-high, $color-beta-low),
+	gamma: ($color-gamma, $color-gamma-high, $color-gamma-low),
+	delta: ($color-delta, $color-delta-high, $color-delta-low)
+);
+
+// COLOUR MAP FOR STATUS MODIFIERS
+// ---------------------------------|
+$statusMap: (
+	success: $color-success,
+	info: $color-info,
+	warning: $color-warning,
+	danger: $color-danger
+);
+
+// COLOUR MAP FOR COLOUR MODIFIERS
+// ---------------------------------|
+$colorMap: (
+	alpha: $color-alpha,
+	beta: $color-beta,
+	gamma: $color-gamma,
+	delta: $color-delta,
+	white: $color-ff,
+	ee: $color-ee,
+	dd: $color-dd,
+	cc: $color-cc,
+	bb: $color-bb,
+	aa: $color-aa,
+	99: $color-99,
+	88: $color-88,
+	77: $color-77,
+	66: $color-66,
+	55: $color-55,
+	44: $color-44,
+	33: $color-33,
+	22: $color-22,
+	11: $color-11,
+	black: $color-00
+);
+
+// COLOUR MAP FOR SOCIAL MODIFIERS
+// ---------------------------------|
+$socialMap: (
+	facebook: $color-facebook,
+	twitter: $color-twitter,
+	googleplus: $color-googleplus,
+	youtube: $color-youtube,
+	linkedin: $color-linkedin,
+	pinterest: $color-pinterest,
+	instagram: $color-instagram,
+	flickr: $color-flickr,
+	tumblr: $color-tumblr,
+	vine: $color-vine
+);
