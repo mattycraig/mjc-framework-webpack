@@ -23,20 +23,18 @@ export default (gulp, $, browserSync, reload) => {
 		// Watch scss
 		gulp.watch([
 			'app/scss/**/*.scss'
-			], ['styles']);
+		], ['styles']);
 
 		// Watch scripts
 		gulp.watch([
-			'app/js/**/*.js',
-			'!app/js/*-bundle.js',
-			'!app/js/bundle.js',
-			], ['webpack']);
+			'app/js/**/*.js'
+		], ['webpack']);
 
 		// Watch jade + locals
 		gulp.watch([
 			'app/jade/**/*.jade',
 			'app/jade/_locals.json'
-			], ['views']);
+		], ['views']);
 	});
 
 	// PRODUCTION SERVE

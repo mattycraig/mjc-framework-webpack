@@ -10,6 +10,17 @@
 	label {
 		@include fontSize($type-small);
 
+		// REQUIRED *
+		// ---------------------------------|
+		.required {
+			@include fontSize($type-smaller);
+			position: relative;
+			top: -2px;
+			display: inline-block;
+			color: $color-danger;
+			margin-left: 5px;
+		}
+
 		// TABLET
 		// ---------------------------------|
 		@include bp(sm) {
@@ -33,10 +44,136 @@
 	.form-control {
 		@include fontSize($type-small);
 
+		&[disabled],
+		&.is-diabled {
+			background: $color-ee;
+			cursor: disabled;
+		}
+
 		// TABLET
 		// ---------------------------------|
 		@include bp(sm) {
 			@include fontSize($type-base);
+		}
+	}
+
+	// CUSTOM CHECKBOXES/RADIOS
+	// -------------------------------------|
+	input {
+		&[type="checkbox"],
+		&[type="radio"] {
+			width: 0;
+			height: 0;
+			opacity: 0;
+			z-index: -1;
+			margin: 0 0 0 -30px;
+			background: transparent;
+			border: 0;
+
+			// CHECKED STYLES
+			&:checked {
+				& ~ .checkbox-custom,
+				& ~ .radio-custom {
+					border-color: $color-cc;
+
+					&:before {
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+
+			// FOCUS STYLES
+			&:focus {
+				& ~ .checkbox-custom,
+				& ~ .radio-custom {
+					border-color: $color-cc;
+				}
+			}
+
+			// DISABLED
+			&[disabled] {
+				background: transparent;
+				cursor: disabled;
+
+				& ~ .checkbox-custom,
+				& ~ .radio-custom {
+					background: $color-ee;
+					border-color: $color-cc;
+					cursor: disabled;
+				}
+
+				// DISABLED + CHECKED
+				&:checked {
+					& ~ .checkbox-custom,
+					& ~ .radio-custom {
+						background: $color-ee;
+						border-color: $color-cc;
+
+						&:before {
+							color: $color-cc;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.checkbox,
+	.radio {
+		&-custom {
+			display: inline-block;
+			vertical-align: middle;
+			width: 25px;
+			height: 25px;
+			background: $color-white;
+			border: 2px solid $color-cc;
+			margin-right: 10px;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: background $speed, border-color $speed;
+
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: -100%;
+				font-family: $type-icon;
+				color: $color-alpha;
+				@include fontSize($type-large);
+				transform: translate(0, -50%);
+				transition: all $speed;
+			}
+		}
+	}
+
+	.checkbox {
+		&-custom {
+			&:before {
+				content: $fa-var-check;
+			}
+		}
+	}
+
+	.radio {
+		&-custom {
+			border-radius: 100%;
+
+			&:before {
+				content: $fa-var-circle;
+				margin-left: -1px;
+				@include fontSize($type-smallest);
+			}
+		}
+	}
+
+	// TEXTAREAS
+	// -------------------------------------|
+	textarea {
+		&.form-control {
+			min-height: 170px;
+			height: auto;
 		}
 	}
 

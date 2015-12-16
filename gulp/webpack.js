@@ -14,4 +14,12 @@ export default (gulp, $, reload, config, development, production, webpackStream)
 			.pipe(production(webpackStream(require('../webpack.prod.config'))))
 			.pipe(production(gulp.dest(config.webpack.dest.prod)));
 	});
+
+	// INDIVIDUAL TASK: SCRIPTS
+	// --------------------------------------|
+	gulp.task('task:scripts', ['clean:scripts'], () => {
+		return gulp.src(config.webpack.src)
+			.pipe(webpackStream(require('../webpack.prod.config')))
+			.pipe(gulp.dest(config.webpack.dest.prod));
+	});
 };

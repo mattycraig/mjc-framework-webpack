@@ -8,7 +8,7 @@
 			"dist/css"
 		],
 		"scripts": [
-			"dist/js/app.js"
+			"dist/js"
 		]
 	},
 	"styles": {
@@ -65,7 +65,7 @@
 	"webpack": {
 		"src": "app/js/app.js",
 		"dest": {
-			"dev": "app/js",
+			"dev": ".tmp/js",
 			"prod": "dist/js"
 		}
 	}

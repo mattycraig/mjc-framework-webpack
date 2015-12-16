@@ -12,6 +12,7 @@ html {
 
 body {
 	font-family: $type-text;
+	color: $text-color;
 	@include fontSize($type-small);
 
 	// TABLET
@@ -37,7 +38,8 @@ body {
 a {
 	transition: color $speed;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 	}
 }
