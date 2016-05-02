@@ -22,18 +22,21 @@ module.exports = {
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false
+			},
+			mangle: {
+				except: ['$super', '$', 'exports', 'require', 'angular']
 			}
 		})
 	],
 	resolve: {
 		root: path.resolve(__dirname),
 		alias: {
-			helpers: 'app/js/helpers',
-			vendor: 'app/js/vendor',
-			modernizr: 'app/js/modernizr',
+			helpers: 'app/js/etc/helpers',
+			vendor: 'app/js/etc/vendor',
+			modernizr: 'app/js/etc/modernizr',
 			bootstrap: 'bootstrap-sass/assets/javascripts/bootstrap',
-			jq: 'app/js/jq',
-			ng: 'app/js/ng'
+			jq: 'app/js/jquery/base',
+			ng: 'app/js/angular/base'
 		}
 	}
 };

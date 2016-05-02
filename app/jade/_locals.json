@@ -2,7 +2,9 @@
 	"site": {
 		"name": "Site",
 		"url": "http://www.test.com",
-		"analytics": "UA-XXXXX-X"
+		"analytics": "UA-XXXXX-X",
+		"theme": "#000000",
+		"responsive": true
 	},
 	"social": {
 		"fb": {
@@ -13,7 +15,6 @@
 			"name": "TwitterUsername"
 		}
 	},
-	"responsive": true,
 	"content": {
 		"test": "This is just a test",
 		"lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla officia voluptate iusto reiciendis nam rerum ad aliquam provident fuga ipsum esse harum odit debitis, qui consequuntur voluptas ullam, hic enim. Lorem ipsum dolar set imet."

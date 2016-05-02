@@ -15,10 +15,10 @@ block variables
 	//- -----------------------------|
 	- var pageName = 'index'
 	- var pageTitle = 'PageTitle | ' + locals.site.name
-	- var ogTitle = pageTitle
 	- var pageDesc = 'PageDescription'
-	- var ogDesc = pageDesc
 	- var pageUrl = locals.site.url + '/' + pageName + '.html'
+	- var ogTitle = pageTitle
+	- var ogDesc = pageDesc
 	- var pageImage = locals.site.url + '/images/share/' + pageName + '.jpg'
 
 
@@ -32,6 +32,7 @@ block content
 				.col-sm-12
 					h1= locals.content.test
 					p= locals.content.lorem
+					p test
 
 					include /layouts/default/components/_test
 

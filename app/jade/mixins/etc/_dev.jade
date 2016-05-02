@@ -9,11 +9,7 @@ mixin devHead(name, subfolder)
 	- var subfolder = subfolder || ''
 	- var url = '/dev/components' + subfolder + '/_' + name + '.html'
 	= '\n'
-	- if (global.devEnv)
-		| <!-- BEGIN COMPONENT: #{name.toUpperCase()} -->
-		| <!-- #{url} -->
-	- else
-		| <!-- BEGIN COMPONENT: #{name.toUpperCase()} -->
+	| <!-- BEGIN COMPONENT: #{name.toUpperCase()} -->
 
 
 //-  DEV FOOT MIXIN

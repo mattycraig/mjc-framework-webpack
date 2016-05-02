@@ -26,7 +26,6 @@ export default (gulp, $, reload, config, development, production) => {
 			'> 1%',
 			'last 2 versions',
 			'Firefox ESR',
-			'Opera 12.1',
 			'Explorer >= 9',
 			'Safari >= 6',
 			'ExplorerMobile >= 10'

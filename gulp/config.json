@@ -24,7 +24,7 @@
 		"src": {
 			"dev": "app/jade/**/*.jade",
 			"filter": [
-				"*",
+				"**/*",
 				"!app/jade/**/_*.jade"
 			]
 		},

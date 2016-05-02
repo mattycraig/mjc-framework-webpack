@@ -16,7 +16,7 @@
 	// ---------------------------------|
 	// See config/vars/_colours.scss
 	@each $name, $colors in $themeMap {
-		&--#{$name} {
+		&-#{$name} {
 			background: nth($colors, 1);
 
 			&:hover {
