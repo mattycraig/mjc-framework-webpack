@@ -18,7 +18,6 @@ export default (gulp, config, development, production) => {
 		return gulp.src(config.copy.src.fonts.npm)
 			.pipe(development(gulp.dest(config.copy.dest.fonts.dev)))
 			.pipe(production(gulp.dest(config.copy.dest.fonts.prod)));
-		console.log('test');
 	});
 
 	// COPY:FONTS:APP

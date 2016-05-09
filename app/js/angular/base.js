@@ -3,7 +3,7 @@
 //--------------------------------------------|
 // Load up Angular.js
 
-// require('script!angular');
+// require('angular');
 
 
 // INIT

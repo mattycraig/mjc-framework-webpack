@@ -51,7 +51,7 @@ export default (gulp, $, reload, config, development, production) => {
 			.pipe(development($.sourcemaps.write('./')))
 			.pipe(development(gulp.dest(config.styles.dest.dev)))
 			.pipe(development(reload({stream: true})))
-			.pipe(production($.minifyCss()))
+			.pipe(production($.cleanCss()))
 			.pipe(production(gulp.dest(config.styles.dest.prod)));
 	});
 
@@ -63,7 +63,7 @@ export default (gulp, $, reload, config, development, production) => {
 			.pipe($.sass.sync(optsSass))
 			.on('error', $.sass.logError)
 			.pipe($.postcss(optsPostCSS))
-			.pipe($.minifyCss())
+			.pipe($.cleanCss())
 			.pipe(gulp.dest(config.styles.dest.prod));
 	});
 };
