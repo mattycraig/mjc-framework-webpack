@@ -7,18 +7,18 @@
 // ROOTS
 // -----------------------------------------------------------------|
 html {
-	@include fontSize($type-base);
+	font-size: $type-base;
 }
 
 body {
 	font-family: $type-text;
 	color: $text-color;
-	@include fontSize($type-small);
+	font-size: $type-small;
 
 	// TABLET
 	// ---------------------------------|
-	@include bp(sm) {
-		@include fontSize($type-base);
+	@include media-breakpoint-up(sm) {
+		font-size: $type-base;
 	}
 }
 
@@ -74,12 +74,12 @@ $headingsMap: (
 	#{$name},
 	.#{$name} {
 		$sizeFix: ceil(nth($size, 1) / nth($size, 2));
-		@include fontSize($sizeFix);
+		font-size: $sizeFix;
 
 		// TABLET
 		// ---------------------------------|
-		@include bp(sm) {
-			@include fontSize(nth($size, 1));
+		@include media-breakpoint-up(sm) {
+			font-size: nth($size, 1);
 		}
 	}
 }

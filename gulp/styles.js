@@ -14,7 +14,8 @@ export default (gulp, $, reload, config, development, production) => {
 			'app/scss/',
 			'node_modules/',
 			'node_modules/bourbon/app/assets/stylesheets/',
-			'node_modules/bootstrap-sass/assets/stylesheets/'
+			// 'node_modules/bootstrap-sass/assets/stylesheets/'
+			'node_modules/bootstrap/scss/'
 		]
 	};
 
@@ -22,12 +23,14 @@ export default (gulp, $, reload, config, development, production) => {
 	// --------------------------------------|
 	let optsAutoprefixer = {
 		browsers: [
-			'> 1%',
-			'last 2 versions',
-			'Firefox ESR',
-			'Explorer >= 9',
-			'Safari >= 6',
-			'ExplorerMobile >= 10'
+			'Android 2.3',
+			'Android >= 4',
+			'Chrome >= 20',
+			'Firefox >= 24',
+			'Explorer >= 8',
+			'iOS >= 6',
+			'Opera >= 12',
+			'Safari >= 6'
 		]
 	};
 

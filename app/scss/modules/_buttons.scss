@@ -4,12 +4,12 @@
 // All overwrites & resets for common button elements.
 
 .btn {
-	@include fontSize($type-small);
+	font-size: $type-small;
 
 	// TABLET
 	// ---------------------------------|
-	@include bp(sm) {
-		@include fontSize($type-base);
+	@include media-breakpoint-up(sm) {
+		font-size: $type-base;
 	}
 
 	// COLOUR MODIFIERS
