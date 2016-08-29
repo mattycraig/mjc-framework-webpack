@@ -45,6 +45,7 @@
 		@include fontSize($type-small);
 
 		&[disabled],
+		&:disabled,
 		&.is-diabled {
 			background: $color-ee;
 			cursor: disabled;
@@ -92,7 +93,9 @@
 			}
 
 			// DISABLED
-			&[disabled] {
+			&[disabled],
+			&:disabled,
+			&.is-disabled {
 				background: transparent;
 				cursor: disabled;
 
@@ -122,10 +125,12 @@
 	.checkbox,
 	.radio {
 		&-custom {
+			$dimensions: 25px;
+
 			display: inline-block;
 			vertical-align: middle;
-			width: 25px;
-			height: 25px;
+			width: $dimensions;
+			height: $dimensions;
 			background: $color-white;
 			border: 2px solid $color-cc;
 			margin-right: 10px;

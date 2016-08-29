@@ -6,10 +6,10 @@ export default (gulp, $, reload, config, development, production) => {
 
 	// JADE OPTIONS
 	// --------------------------------------|
-	let getLocals = require('../app/jade/_locals.json');
-	let optsJade = {
+	let getLocals = require('../app/pug/_locals.json');
+	let optsPug = {
 		pretty: true,
-		basedir: 'app/jade',
+		basedir: 'app/pug',
 		locals: getLocals
 	};
 
@@ -28,10 +28,10 @@ export default (gulp, $, reload, config, development, production) => {
 	gulp.task('views', () => {
 		return gulp.src(config.views.src.dev)
 			.pipe(development($.changed('.tmp', {extension: '.html'})))
-			.pipe(development($.if(global.isWatching, $.cached('jade'))))
-			.pipe(development($.jadeInheritance({basedir: 'app/jade'})))
+			.pipe(development($.if(global.isWatching, $.cached('pug'))))
+			.pipe(development($.pugInheritance({basedir: 'app/pug'})))
 			.pipe($.filter(config.views.src.filter))
-			.pipe($.jade(optsJade))
+			.pipe($.pug(optsPug))
 			.pipe($.prettify(optsPretty))
 			.pipe(development(gulp.dest(config.views.dest.dev)))
 			.pipe(development(reload({stream: true})))

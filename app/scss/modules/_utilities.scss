@@ -45,13 +45,13 @@
 // UTILITY FONT SIZES
 // ---------------------------------|
 $e: 10;
-@while $e < 26 {
+@while $e <= 20 {
 	.u-fontSize-#{$e} {
 		$remSize: $e / 16;
 		font-size: #{$e}px !important;
 		font-size: $remSize * 1rem !important;
 	}
-	$e: $e + 2;
+	$e: $e + 1;
 }
 
 // UTILITY DISPLAY
@@ -89,7 +89,8 @@ $e: 10;
 // ---------------------------------|
 $floats:
 	Left,
-	Right;
+	Right,
+	None;
 
 @each $float in $floats {
 	.u-align#{$float} {
@@ -109,7 +110,7 @@ $types:
 	margin,
 	padding;
 
-@while $i < 11 {
+@while $i <= 10 {
 	@each $dir in $dirs {
 		@each $type in $types {
 			.u-#{$type}#{$dir}#{if($i != 1, '-' + $i, '')} {

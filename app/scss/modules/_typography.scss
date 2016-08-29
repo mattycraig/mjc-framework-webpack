@@ -71,7 +71,8 @@ $headingsMap: (
 // HEADING SIZES
 // ---------------------------------|
 @each $name, $size in $headingsMap {
-	#{$name} {
+	#{$name},
+	.#{$name} {
 		$sizeFix: ceil(nth($size, 1) / nth($size, 2));
 		@include fontSize($sizeFix);
 

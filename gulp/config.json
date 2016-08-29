@@ -22,10 +22,10 @@
 	},
 	"views": {
 		"src": {
-			"dev": "app/jade/**/*.jade",
+			"dev": "app/pug/**/*.pug",
 			"filter": [
 				"**/*",
-				"!app/jade/**/_*.jade"
+				"!app/pug/**/_*.pug"
 			]
 		},
 		"dest": {
@@ -38,7 +38,7 @@
 			"root": [
 				"app/*.*",
 				"!app/**/*.html",
-				"!app/**/*.jade"
+				"!app/**/*.pug"
 			],
 			"fonts": {
 				"npm": [

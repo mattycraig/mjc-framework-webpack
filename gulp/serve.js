@@ -30,10 +30,10 @@ export default (gulp, $, browserSync, reload) => {
 			'app/js/**/*.js'
 		], ['webpack']);
 
-		// Watch jade + locals
+		// Watch pug + locals
 		gulp.watch([
-			'app/jade/**/*.jade',
-			'app/jade/_locals.json'
+			'app/pug/**/*.pug',
+			'app/pug/_locals.json'
 		], ['views']);
 	});
 

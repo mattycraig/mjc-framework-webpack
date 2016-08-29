@@ -7,8 +7,7 @@
 // ---------------------------------|
 // #A : REM FONT SIZE WITH FALLBACK MIXIN
 // #B : REM LINE HEIGHT MIXIN
-// #C : HADRWARE ACCELERATION MIXIN
-// #D : BREAKPOINTS MIXIN
+// #C : BREAKPOINTS MIXIN
 // ---------------------------------|
 
 // #A : REM FONT SIZE WITH FALLBACK MIXIN
@@ -30,13 +29,7 @@
 	line-height: (.125 * $heightValue) + rem;
 }
 
-// #C : HADRWARE ACCELERATION MIXIN
-// ---------------------------------|
-@mixin hardwareAccel {
-	transform: translate3d(0, 0, 0);
-}
-
-// #D : BREAKPOINTS MIXIN
+// #C : BREAKPOINTS MIXIN
 // ---------------------------------|
 @mixin bp($point) {
 	@if $point == xs {
@@ -45,13 +38,25 @@
 	@else if $point == sm {
 		@media (min-width: $screen-sm-min) { @content; }
 	}
+	@else if $point == smMax {
+		@media (max-width: $screen-sm-min - 1) { @content; }
+	}
 	@else if $point == md {
 		@media (min-width: $screen-md-min) { @content; }
+	}
+	@else if $point == mdMax {
+		@media (max-width: $screen-md-min - 1) { @content; }
 	}
 	@else if $point == lg {
 		@media (min-width: $screen-lg-min)  { @content; }
 	}
+	@else if $point == lgMax {
+		@media (max-width: $screen-lg-min - 1)  { @content; }
+	}
 	@else if $point == lgst {
 		@media (min-width: 1600px)  { @content; }
+	}
+	@else if $point == lgstMax {
+		@media (max-width: 1599px)  { @content; }
 	}
 }
