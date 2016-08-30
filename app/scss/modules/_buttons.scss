@@ -4,14 +4,6 @@
 // All overwrites & resets for common button elements.
 
 .btn {
-	font-size: $type-small;
-
-	// TABLET
-	// ---------------------------------|
-	@include media-breakpoint-up(sm) {
-		font-size: $type-base;
-	}
-
 	// COLOUR MODIFIERS
 	// ---------------------------------|
 	// See config/vars/_colours.scss

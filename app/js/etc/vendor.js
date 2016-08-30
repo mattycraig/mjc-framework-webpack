@@ -18,6 +18,8 @@
 // require('bootstrap/tooltip');
 // require('bootstrap/popover');
 
+require('script!bootstrap/bootstrap.js');
+
 // OUTDATED BROWSER (<= IE8)
 // ---------------------------------|
 require('script!outdated-browser/outdatedbrowser/outdatedbrowser');

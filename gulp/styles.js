@@ -14,7 +14,6 @@ export default (gulp, $, reload, config, development, production) => {
 			'app/scss/',
 			'node_modules/',
 			'node_modules/bourbon/app/assets/stylesheets/',
-			// 'node_modules/bootstrap-sass/assets/stylesheets/'
 			'node_modules/bootstrap/scss/'
 		]
 	};

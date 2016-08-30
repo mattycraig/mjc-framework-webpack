@@ -31,7 +31,7 @@ module.exports = {
 			helpers: 'app/js/etc/helpers',
 			vendor: 'app/js/etc/vendor',
 			modernizr: 'app/js/etc/modernizr',
-			bootstrap: 'bootstrap-sass/assets/javascripts/bootstrap',
+			bootstrap: 'bootstrap/dist/js',
 			jq: 'app/js/jquery/base',
 			ng: 'app/js/angular/base'
 		}
