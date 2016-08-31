@@ -1,0 +1,126 @@
+//- -----------------------------------------------------------------|
+//- STYLES
+//- -----------------------------------------------------------------|
+//- Contains all blocks/variables & HTML for the styles page
+//- This includes the page title, meta tags, and all content.
+
+extends /layouts/default/_default
+
+//- -----------------------------------------------------------------|
+//- PAGE SPECIFIC VARIABLES
+//- -----------------------------------------------------------------|
+block variables
+
+	//- PAGE META
+	//- -----------------------------|
+	- var pageName = 'styles'
+	- var pageTitle = 'Styleguide | ' + locals.site.name
+	- var pageDesc = 'PageDescription'
+	- var pageUrl = locals.site.url + '/' + pageName + '.html'
+	- var ogTitle = pageTitle
+	- var ogDesc = pageDesc
+	- var pageImage = locals.site.url + '/images/share/' + pageName + '.jpg'
+
+
+//- -----------------------------------------------------------------|
+//- CONTENT
+//- -----------------------------------------------------------------|
+block content
+	main#content(role='main')
+
+		nav.navbar.navbar-dark.bg-inverse.navbar-fixed-top
+			.container
+				.nav.navbar-nav
+					a.navbar-brand(href='#top') Styleguide
+					a.nav-item.nav-link(href='#alert') Alert
+					a.nav-item.nav-link(href='#breadcrumb') Breadcrumb
+					a.nav-item.nav-link(href='#buttons') Buttons
+
+		.container
+			.row
+				.col-md-6
+					h3#alerts Alert
+					.alert.alert-success(role='alert')
+						h4 Alert!
+						| You successfully read this important alert message.
+					.alert.alert-info(role='alert')
+						h4 Alert!
+						| You successfully read this important alert message.
+					.alert.alert-warning(role='alert')
+						h4 Alert!
+						| You successfully read this important alert message.
+					.alert.alert-danger(role='alert')
+						h4 Alert!
+						| You successfully read this important alert message.
+
+				.col-md-6
+					h3#breadcrumb Breadcrumb
+					ol.breadcrumb
+						li.breadcrumb-item
+							a(href='#') Home
+						li.breadcrumb-item
+							a(href='#') Library
+						li.breadcrumb-item.active Data
+
+					hr
+
+					h3#buttons Buttons
+					.row.m-y-1
+						.col-sm-3
+							button.btn.btn-primary Primary
+						.col-sm-3
+							button.btn.btn-secondary Secondary
+						.col-sm-3
+							button.btn.btn-success Success
+						.col-sm-3
+							button.btn.btn-info Info
+					.row.m-y-1
+						.col-sm-4
+							button.btn.btn-warning Warning
+						.col-sm-4
+							button.btn.btn-danger Danger
+						.col-sm-4
+							button.btn.btn-link Link
+					.row.m-y-1
+						.col-sm-3
+							button.btn.btn-alpha Alpha
+						.col-sm-3
+							button.btn.btn-beta Beta
+						.col-sm-3
+							button.btn.btn-gamma Gamma
+						.col-sm-3
+							button.btn.btn-delta Delta
+
+
+
+//- --------------------------------------|
+//- HEAD - PAGE SPECIFIC <HEAD>
+//- --------------------------------------|
+block head
+	style.
+		.header,
+		.footer {
+			display: none;
+		}
+
+		#content {
+			padding: 100px 0;
+		}
+
+//- --------------------------------------|
+//- HEAD - PAGE SPECIFIC HEADER
+//- --------------------------------------|
+block header
+	//- Usually not needed.
+
+//- --------------------------------------|
+//- FOOTER - PAGE SPECIFIC FOOTER
+//- --------------------------------------|
+block footer
+	//- Usually not needed.
+
+//- --------------------------------------|
+//- FOOTER - PAGE SPECIFIC FOOT (JS)
+//- --------------------------------------|
+block foot
+	//- Usually not needed.

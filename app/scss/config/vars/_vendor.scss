@@ -8,14 +8,14 @@
 // ---------------------------------|
 // Quickly modify global styling by enabling or disabling optional features.
 
-// $enable-flex:               false;
-// $enable-rounded:            false;
-// $enable-shadows:            true;
-// $enable-gradients:          true;
+// $enable-flex:               true;
+// $enable-rounded:            true;
+// $enable-shadows:            false;
+// $enable-gradients:          false;
 $enable-transitions:        true;
-// $enable-hover-media-query:  false;
-// $enable-grid-classes:       true;
-// $enable-print-styles:       true;
+// $enable-hover-media-query:  true;
+// $enable-grid-classes:       false;
+// $enable-print-styles:       false;
 
 // ---------------------------------|
 // COLORS
@@ -61,8 +61,7 @@ $brand-danger:              $color-danger;
 // $link-color:            $brand-primary;
 // $link-decoration:       none;
 // $link-hover-color:      darken($link-color, 15%);
-// $link-hover-decoration: underline;
-
+$link-hover-decoration: none;
 
 // ---------------------------------|
 // GRID BREAKPOINTS
