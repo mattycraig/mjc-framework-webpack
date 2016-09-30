@@ -10,7 +10,6 @@ html {
 	font-size: $type-small;
 
 	// DESKTOP
-	// ---------------------------------|
 	@include media-breakpoint-up(md) {
 		font-size: $font-size-root;
 	}
@@ -32,29 +31,3 @@ html {
 a {
 	transition: color $speed;
 }
-
-// -----------------------------------------------------------------|
-// HEADINGS
-// -----------------------------------------------------------------|
-$headingsMap: (
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6
-);
-
-@each $name in $headingsMap {
-	.#{$name} {
-		@extend #{$name};
-	}
-}
-
-// -----------------------------------------------------------------|
-// MISCELLANEOUS
-// -----------------------------------------------------------------|
-hr {
-	border-color: $color-dd;
-}
-

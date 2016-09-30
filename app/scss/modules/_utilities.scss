@@ -78,24 +78,6 @@
 	}
 }
 
-// UTILITY TEXT ALIGNMENT
-// ---------------------------------|
-.u-textCenter { text-align: center !important; }
-.u-textLeft { text-align: left !important; }
-.u-textRight { text-align: right !important; }
-
-// UTILITY FONT SIZES
-// ---------------------------------|
-$e: 10;
-@while $e <= 20 {
-	.u-fontSize-#{$e} {
-		$remSize: $e / 16;
-		font-size: #{$e}px !important;
-		font-size: $remSize * 1rem !important;
-	}
-	$e: $e + 1;
-}
-
 // UTILITY DISPLAY
 // ---------------------------------|
 .u-displayBlock {
@@ -125,19 +107,6 @@ $e: 10;
 
 .u-displayTableRow {
 	display: table-row !important;
-}
-
-// UTILITY FLOAT
-// ---------------------------------|
-$floats:
-	Left,
-	Right,
-	None;
-
-@each $float in $floats {
-	.u-float#{$float} {
-		float: to-lower-case($float) !important;
-	}
 }
 
 // UTILITY MARGIN/PADDING

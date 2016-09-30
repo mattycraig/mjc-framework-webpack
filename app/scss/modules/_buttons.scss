@@ -4,15 +4,44 @@
 // All overwrites & resets for common button elements.
 
 .btn {
+
+	// BTN-LOADING
+	// ---------------------------------|
+	&-loading {
+		cursor: $cursor-disabled;
+
+		&:after {
+			display: inline-block;
+			line-height: 1;
+			font-family: $type-icon;
+			content: $fa-var-spinner;
+			margin-left: $btn-padding-x-sm;
+			@extend .fa-spin;
+		}
+	}
+
 	// COLOUR MODIFIERS
 	// ---------------------------------|
 	// See config/vars/_colours.scss
 	@each $name, $colors in $themeMap {
 		&-#{$name} {
+			color: $color-white;
 			background: nth($colors, 1);
 
-			&:hover {
+			&:hover,
+			&:focus {
 				background: nth($colors, 3);
+			}
+
+			&[disabled],
+			&:disabled,
+			&.btn-loading {
+				background: nth($colors, 1);
+
+				&:hover,
+				&:focus {
+					background: nth($colors, 1);
+				}
 			}
 		}
 	}

@@ -8,25 +8,25 @@
 // ---------------------------------|
 // Quickly modify global styling by enabling or disabling optional features.
 
-// $enable-flex:               true;
-// $enable-rounded:            true;
-// $enable-shadows:            false;
-// $enable-gradients:          false;
+$enable-flex:               true;
+$enable-rounded:            true;
+$enable-shadows:            false;
+$enable-gradients:          false;
 $enable-transitions:        true;
-// $enable-hover-media-query:  true;
-// $enable-grid-classes:       false;
-// $enable-print-styles:       false;
+$enable-hover-media-query:  false;
+$enable-grid-classes:       true;
+$enable-print-styles:       true;
 
 // ---------------------------------|
 // COLORS
 // ---------------------------------|
 // Grayscale and brand colors for use across Bootstrap.
 
-// $gray-dark:                 #373a3c;
-// $gray:                      #55595c;
-// $gray-light:                #818a91;
-// $gray-lighter:              #eceeef;
-// $gray-lightest:             #f7f7f9;
+$gray-dark:                 $color-44;
+$gray:                      $color-66;
+$gray-light:                $color-88;
+$gray-lighter:              $color-ee;
+$gray-lightest:             #f7f7f9;
 
 $brand-primary:             $color-alpha;
 $brand-success:             $color-success;
@@ -272,7 +272,7 @@ $link-hover-decoration: none;
 // $input-border-radius-sm:         $border-radius-sm;
 
 // $input-bg-focus:                 $input-bg;
-// $input-border-focus:             #66afe9;
+$input-border-focus:             $color-alpha;
 // $input-box-shadow-focus:         rgba(102,175,233,.6);
 // $input-color-focus:              $input-color;
 
@@ -340,7 +340,7 @@ $link-hover-decoration: none;
 // $custom-select-border-color:  $input-border-color;
 // $custom-select-border-radius: $border-radius;
 
-// $custom-select-focus-border-color: #51a7e8;
+$custom-select-focus-border-color: $input-border-focus;
 // $custom-select-focus-box-shadow:   inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba(81, 167, 232, .5);
 
 // $custom-select-sm-padding-y: .2rem;
@@ -361,14 +361,18 @@ $link-hover-decoration: none;
 // $custom-file-box-shadow:    inset 0 .2rem .4rem rgba(0,0,0,.05);
 // $custom-file-button-color:  $custom-file-color;
 // $custom-file-button-bg:     #eee;
-// $custom-file-text: (
-//   placeholder: (
-//     en: "Choose file..."
-//   ),
-//   button-label: (
-//     en: "Browse"
-//   )
-// );
+$custom-file-text: (
+  placeholder: (
+    en: "Choose file...",
+    es: "Seleccionar archivo...",
+    fr: "Choisir un fichier..."
+  ),
+  button-label: (
+    en: "Browse",
+    es: "Navegar",
+    fr: "Feuilleter"
+  )
+);
 
 // Form validation icons
 // $form-icon-success: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%235cb85c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");

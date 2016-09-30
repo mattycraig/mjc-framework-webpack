@@ -32,10 +32,89 @@ block content
 				.col-sm-12
 					h1= locals.content.test
 					p= locals.content.lorem
-					p test
+					hr
+
+					form
+						.form-group.has-danger
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Error!
+						.form-group.has-success
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Success!
+						.form-group.has-warning
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Warning!
+						.form-group
+							label(for='exampleInputPassword1')
+								| Password (Disabled)
+								span.required *
+							input#exampleInputPassword1.form-control(type='password', placeholder='Password' disabled)
+						.form-group
+							select.custom-select
+								option(selected disabled) Select...
+								option(value='1') One
+								option(value='2') Two
+								option(value='3') Three
+						.form-group
+							.input-group
+								span#basic-addon1.input-group-addon
+									i.fa.fa-star
+								input.form-control(type='text' placeholder='Username' aria-describedby='basic-addon1')
+						.form-group
+							label.custom-file
+								input#file.custom-file-input(type='file')
+								span.custom-file-control
+						.form-group
+							label
+								| Checkbox Styles
+								span.required *
+							.checkbox
+								label
+									input(type='checkbox')
+									.checkbox-custom
+									|  Check me out
+								label
+									input(type='checkbox' disabled checked)
+									.checkbox-custom
+									|  Check me out (disabled)
+						.form-group
+							label
+								| Radio Styles
+								span.required *
+							.radio
+								label
+									input(
+										type='radio'
+										required
+										name='prospectiveexisting'
+										value='prospective'
+									)
+									.radio-custom
+									| Option 1
+								label
+									input(
+										type='radio'
+										required
+										name='prospectiveexisting'
+										value='existing'
+									)
+									.radio-custom
+									| Option 2
+						button.btn(type='submit') Submit
+						button.btn.btn-alpha.btn-loading(type='submit') Loading
+
+					hr
 
 					.card
-						img.card-img-top(src='...', alt='Card image cap')
 						.card-block
 							h4.card-title Card title
 							a(href='#') Testing

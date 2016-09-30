@@ -46,19 +46,19 @@ $color-vine: #00bf8f;
 
 // THEME
 // ---------------------------------|
-$color-alpha: $color-black !default;
+$color-alpha: $color-88;
 $color-alpha-low: darken($color-alpha, 10%);
 $color-alpha-high: lighten($color-alpha, 10%);
 
-$color-beta: $color-black !default;
+$color-beta: $color-black;
 $color-beta-low: darken($color-beta, 10%);
 $color-beta-high: lighten($color-beta, 10%);
 
-$color-gamma: $color-black !default;
+$color-gamma: $color-black;
 $color-gamma-low: darken($color-gamma, 10%);
 $color-gamma-high: lighten($color-gamma, 10%);
 
-$color-delta: $color-black !default;
+$color-delta: $color-black;
 $color-delta-low: darken($color-delta, 10%);
 $color-delta-high: lighten($color-delta, 10%);
 

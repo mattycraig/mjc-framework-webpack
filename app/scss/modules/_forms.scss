@@ -8,30 +8,14 @@
 // -----------------------------------------------------------------|
 .form-group {
 	label {
-		// font-size: $type-small;
+		position: relative;
 
 		// REQUIRED *
 		// ---------------------------------|
 		.required {
-			// font-size: $type-smaller;
 			position: relative;
 			top: -2px;
 			display: inline-block;
-			color: $color-danger;
-			margin-left: 5px;
-		}
-
-		// TABLET
-		// ---------------------------------|
-		@include media-breakpoint-up(sm) {
-			// font-size: $type-base;
-		}
-	}
-
-	// HAS ERRORS
-	// -------------------------------------|
-	&.has-error {
-		label {
 			color: $color-danger;
 		}
 	}
@@ -41,22 +25,6 @@
 // INPUTS
 // -----------------------------------------------------------------|
 .form-group {
-	.form-control {
-		// font-size: $type-small;
-
-		&[disabled],
-		&:disabled,
-		&.is-diabled {
-			background: $color-ee;
-			cursor: disabled;
-		}
-
-		// TABLET
-		// ---------------------------------|
-		@include media-breakpoint-up(sm) {
-			// font-size: $type-base;
-		}
-	}
 
 	// CUSTOM CHECKBOXES/RADIOS
 	// -------------------------------------|
@@ -67,7 +35,6 @@
 			height: 0;
 			opacity: 0;
 			z-index: -1;
-			margin: 0 0 0 -30px;
 			background: transparent;
 			border: 0;
 
@@ -75,7 +42,7 @@
 			&:checked {
 				& ~ .checkbox-custom,
 				& ~ .radio-custom {
-					border-color: $color-cc;
+					// border-color: $input-border-focus;
 
 					&:before {
 						left: 50%;
@@ -88,33 +55,40 @@
 			&:focus {
 				& ~ .checkbox-custom,
 				& ~ .radio-custom {
-					border-color: $color-cc;
+					color: $input-color-focus;
+					background-color: $input-bg-focus;
+					border-color: $input-border-focus;
+					outline: none;
+					$shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $input-box-shadow-focus;
+					@include box-shadow($shadow);
 				}
 			}
 
 			// DISABLED
 			&[disabled],
-			&:disabled,
-			&.is-disabled {
+			&:disabled {
 				background: transparent;
-				cursor: disabled;
+				cursor: $cursor-disabled;
 
 				& ~ .checkbox-custom,
 				& ~ .radio-custom {
-					background: $color-ee;
-					border-color: $color-cc;
-					cursor: disabled;
+					background: $input-bg-disabled;
+					border-color: $input-border-color;
+					cursor: $cursor-disabled;
 				}
 
 				// DISABLED + CHECKED
 				&:checked {
+					cursor: $cursor-disabled;
+
 					& ~ .checkbox-custom,
 					& ~ .radio-custom {
-						background: $color-ee;
-						border-color: $color-cc;
+						cursor: $cursor-disabled;
+						background: $input-bg-disabled;
+						border-color: $input-border-color;
 
 						&:before {
-							color: $color-cc;
+							color: $input-color-placeholder;
 						}
 					}
 				}
@@ -124,21 +98,35 @@
 
 	.checkbox,
 	.radio {
+		label {
+			display: block;
+
+			// TABLET
+			@include media-breakpoint-up(sm) {
+				display: inline-block;
+
+				& + label {
+					margin-left: $input-padding-x;
+				}
+			}
+		}
+
 		&-custom {
-			$dimensions: 25px;
+			$dimensions: $input-padding-x-lg;
 
 			display: inline-block;
 			vertical-align: middle;
 			width: $dimensions;
 			height: $dimensions;
-			background: $color-white;
-			border: 2px solid $color-cc;
-			margin-right: 10px;
+			background: $input-bg;
+			border-color: $input-border-color;
+			border: $input-btn-border-width solid $input-border-color;
+			margin-right: $input-padding-x;
 			overflow: hidden;
-			position: absolute;
-			top: 0;
-			left: 0;
-			transition: background $speed, border-color $speed;
+			position: relative;
+			@include border-radius($input-border-radius);
+			@include box-shadow($input-box-shadow);
+			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
 
 			&:before {
 				position: absolute;
@@ -146,7 +134,6 @@
 				left: -100%;
 				font-family: $type-icon;
 				color: $color-alpha;
-				// font-size: $type-large;
 				transform: translate(0, -50%);
 				transition: all $speed;
 			}
@@ -167,8 +154,8 @@
 
 			&:before {
 				content: $fa-var-circle;
-				margin-left: -1px;
-				// font-size: $type-smallest;
+				// margin-left: -1px;
+				font-size: 0.5rem;
 			}
 		}
 	}
@@ -182,31 +169,123 @@
 		}
 	}
 
-	// HAS ERRORS
+	// CUSTOM SELECT,
+	// CUSTOM FILE
 	// -------------------------------------|
-	&.has-error {
-		.form-control {
-			border-color: $color-danger;
-		}
+	.custom-select,
+	.custom-file {
+		width: 100%;
 	}
 }
 
 // -----------------------------------------------------------------|
-// ERROR MESSAGES
+// ERROR + FEEDBACK MESSAGES
 // -----------------------------------------------------------------|
 .form-group {
-	.help-block {
-		color: $color-danger;
-		// font-size: $type-smaller;
+	.help-block,
+	.form-control-feedback {
 		display: none;
 	}
 
-	// HAS ERRORS
-	// -------------------------------------|
-	&.has-error {
-		.help-block {
+	&.has-danger,
+	&.has-warning,
+	&.has-success {
+		.help-block,
+		.form-control-feedback {
 			display: block;
-			@include fadeIn();
+			@include fadeIn(1, $speed * 2);
+		}
+
+		.form-control {
+			padding-right: ($input-padding-x * 3);
+			background-repeat: no-repeat;
+			background-position: center right ($input-height / 4);
+			background-size: ($input-height / 2) ($input-height / 2);
+		}
+	}
+
+	// HAS-DANGER
+	// -------------------------------------|
+	&.has-danger {
+		label {
+			color: $color-danger;
+		}
+
+		.form-control {
+			@include bounce(1, $speed * 2);
+			background-image: $form-icon-danger;
+		}
+
+		.radio,
+		.checkbox {
+			label {
+				color: $input-color;
+			}
+
+			&-custom {
+				border-color: $color-danger;
+				@include bounce(1, $speed * 2);
+			}
+		}
+	}
+
+	// HAS-SUCCESS
+	// -------------------------------------|
+	&.has-success {
+		.form-control {
+			background-image: $form-icon-success;
+		}
+	}
+
+	// HAS-WARNING
+	// -------------------------------------|
+	&.has-warning {
+		.form-control {
+			background-image: $form-icon-warning;
 		}
 	}
 }
+
+// -----------------------------------------------------------------|
+// ADDITIONAL STYLING
+// -----------------------------------------------------------------|
+
+// IOS RESETS
+// ---------------------------------|
+// input:not([type='checkbox']),
+// input:not([type='radio']),
+// select,
+// textarea {
+// 	-webkit-appearance: none;
+// 	-moz-appearance: none;
+// 	box-shadow: none !important;
+// }
+
+// SELECT ARROWS
+// ---------------------------------|
+// select.form-control {
+// 	background-image: url('../images/select-arrow.png');
+// 	background-repeat: no-repeat;
+// 	background-position: calc(100% - 15px) 50%;
+
+// 	&::-ms-expand {
+// 		display: none;
+// 	}
+
+// 	option {
+// 		&[disabled] {
+// 			color: $input-color-placeholder;
+// 		}
+// 	}
+// }
+
+// ERROR
+// .form-group.has-error select.form-control {
+// 	background-image: url('../images/select-arrow-error.png');
+// 	background-repeat: no-repeat;
+// 	background-position: calc(100% - 15px) 50%;
+
+// 	&::-ms-expand {
+// 		display: none;
+// 	}
+// }
