@@ -13,8 +13,7 @@
 		display: block;
 		content: ' ';
 		transition: all $hamSpeed;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
 	}
 
 	span {

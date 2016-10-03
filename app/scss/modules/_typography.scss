@@ -29,5 +29,5 @@ html {
 // LINKS
 // -----------------------------------------------------------------|
 a {
-	transition: color $speed;
+	@include transition(color $speed);
 }
