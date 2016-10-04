@@ -34,6 +34,8 @@ block content
 					p= locals.content.lorem
 					hr
 
+					p hello
+
 					form
 						.form-group.has-danger
 							label(for='exampleInputEmail1')
@@ -75,17 +77,22 @@ block content
 								span.custom-file-control
 						.form-group
 							label
+								| Textarea
+								span.required *
+							textarea.form-control
+						.form-group
+							label
 								| Checkbox Styles
 								span.required *
 							.checkbox
 								label
 									input(type='checkbox')
 									.checkbox-custom
-									|  Check me out
+									span.checkbox-label Check me out
 								label
 									input(type='checkbox' disabled checked)
 									.checkbox-custom
-									|  Check me out (disabled)
+									span.checkbox-label Check me out (disabled checked)
 						.form-group
 							label
 								| Radio Styles
@@ -99,16 +106,18 @@ block content
 										value='prospective'
 									)
 									.radio-custom
-									| Option 1
+									span.radio-label Option 1
 								label
 									input(
 										type='radio'
 										required
 										name='prospectiveexisting'
 										value='existing'
+										disabled
+										checked
 									)
 									.radio-custom
-									| Option 2
+									span.radio-label Option 2 (disabled checked)
 						button.btn(type='submit') Submit
 						button.btn.btn-alpha.btn-loading(type='submit') Loading
 
