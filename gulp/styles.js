@@ -44,7 +44,7 @@ export default (gulp, $, reload, config, development, production) => {
 		return gulp.src(config.styles.src.scss)
 			.pipe($.sassBulkImport())
 			.pipe(development($.sourcemaps.init()))
-			.pipe($.sass.sync(optsSass))
+			.pipe($.sass(optsSass))
 			.on('error', $.sass.logError)
 			.pipe($.postcss(optsPostCSS))
 			.pipe(development($.sourcemaps.write('./')))
@@ -59,7 +59,7 @@ export default (gulp, $, reload, config, development, production) => {
 	gulp.task('task:styles', ['clean:styles'], () => {
 		return gulp.src(config.styles.src.scss)
 			.pipe($.sassBulkImport())
-			.pipe($.sass.sync(optsSass))
+			.pipe($.sass(optsSass))
 			.on('error', $.sass.logError)
 			.pipe($.postcss(optsPostCSS))
 			.pipe($.cleanCss())
