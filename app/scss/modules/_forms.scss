@@ -23,7 +23,7 @@
 
 		// TABLET
 		// ---------------------------------|
-		@include bp(sm) {
+		@include breakpoint(medium) {
 			@include fontSize($type-base);
 		}
 	}
@@ -53,7 +53,7 @@
 
 		// TABLET
 		// ---------------------------------|
-		@include bp(sm) {
+		@include breakpoint(medium) {
 			@include fontSize($type-base);
 		}
 	}

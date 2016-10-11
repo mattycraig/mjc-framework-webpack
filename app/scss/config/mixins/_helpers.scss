@@ -31,32 +31,35 @@
 
 // #C : BREAKPOINTS MIXIN
 // ---------------------------------|
-@mixin bp($point) {
-	@if $point == xs {
-		@media (max-width: $screen-xs-max) { @content; }
-	}
-	@else if $point == sm {
-		@media (min-width: $screen-sm-min) { @content; }
-	}
-	@else if $point == smMax {
-		@media (max-width: $screen-sm-min - 1) { @content; }
-	}
-	@else if $point == md {
-		@media (min-width: $screen-md-min) { @content; }
-	}
-	@else if $point == mdMax {
-		@media (max-width: $screen-md-min - 1) { @content; }
-	}
-	@else if $point == lg {
-		@media (min-width: $screen-lg-min)  { @content; }
-	}
-	@else if $point == lgMax {
-		@media (max-width: $screen-lg-min - 1)  { @content; }
-	}
-	@else if $point == lgst {
-		@media (min-width: 1600px)  { @content; }
-	}
-	@else if $point == lgstMax {
-		@media (max-width: 1599px)  { @content; }
-	}
-}
+// @mixin bp($point) {
+// 	@if $point == xs {
+// 		@media (max-width: map-get($breakpoints,
+// 			"medium") - 1) { @content; }
+// 	}
+// 	@else if $point == sm {
+// 		@media (min-width: map-get($breakpoints,
+// 			"medium")) { @content; }
+// 	}
+// 	@else if $point == smMax {
+// 		@media (max-width: map-get($breakpoints,
+// 			"medium") - 1) { @content; }
+// 	}
+// 	@else if $point == md {
+// 		@media (min-width: $screen-md-min) { @content; }
+// 	}
+// 	@else if $point == mdMax {
+// 		@media (max-width: $screen-md-min - 1) { @content; }
+// 	}
+// 	@else if $point == lg {
+// 		@media (min-width: $screen-lg-min)  { @content; }
+// 	}
+// 	@else if $point == lgMax {
+// 		@media (max-width: $screen-lg-min - 1)  { @content; }
+// 	}
+// 	@else if $point == lgst {
+// 		@media (min-width: 1600px)  { @content; }
+// 	}
+// 	@else if $point == lgstMax {
+// 		@media (max-width: 1599px)  { @content; }
+// 	}
+// }
