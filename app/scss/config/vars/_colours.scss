@@ -50,11 +50,11 @@ $color-alpha: $color-vine;
 $color-alpha-low: darken($color-alpha, 10%);
 $color-alpha-high: lighten($color-alpha, 10%);
 
-$color-beta: $color-black;
+$color-beta: $color-instagram;
 $color-beta-low: darken($color-beta, 10%);
 $color-beta-high: lighten($color-beta, 10%);
 
-$color-gamma: $color-black;
+$color-gamma: $color-flickr;
 $color-gamma-low: darken($color-gamma, 10%);
 $color-gamma-high: lighten($color-gamma, 10%);
 
@@ -108,14 +108,14 @@ $colorMap: (
 // COLOUR MAP FOR SOCIAL MODIFIERS
 // ---------------------------------|
 $socialMap: (
-	facebook: $color-facebook,
-	twitter: $color-twitter,
-	googleplus: $color-googleplus,
-	youtube: $color-youtube,
-	linkedin: $color-linkedin,
-	pinterest: $color-pinterest,
-	instagram: $color-instagram,
-	flickr: $color-flickr,
-	tumblr: $color-tumblr,
-	vine: $color-vine
+	facebook: ($color-facebook, lighten($color-facebook, 10%), darken($color-facebook, 10%)),
+	twitter: ($color-twitter, lighten($color-twitter, 10%), darken($color-twitter, 10%)),
+	googleplus: ($color-googleplus, lighten($color-googleplus, 10%), darken($color-googleplus, 10%)),
+	youtube: ($color-youtube, lighten($color-youtube, 10%), darken($color-youtube, 10%)),
+	linkedin: ($color-linkedin, lighten($color-linkedin, 10%), darken($color-linkedin, 10%)),
+	pinterest: ($color-pinterest, lighten($color-pinterest , 10%), darken($color-pinterest, 10%)),
+	instagram: ($color-instagram, lighten($color-instagram , 10%), darken($color-instagram, 10%)),
+	flickr: ($color-flickr, lighten($color-flickr, 10%), darken($color-flickr, 10%)),
+	tumblr: ($color-tumblr, lighten($color-tumblr, 10%), darken($color-tumblr, 10%)),
+	vine: ($color-vine, lighten($color-vine, 10%), darken($color-vine, 10%))
 );

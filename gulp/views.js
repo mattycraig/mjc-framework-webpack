@@ -29,7 +29,7 @@ export default (gulp, $, reload, config, development, production) => {
 		return gulp.src(config.views.src.dev)
 			.pipe(development($.changed('.tmp', {extension: '.html'})))
 			.pipe(development($.if(global.isWatching, $.cached('pug'))))
-			.pipe(development($.pugInheritance({basedir: 'app/pug'})))
+			.pipe(development($.pugInheritance({basedir: 'app/pug', skip: 'node_modules'})))
 			.pipe($.filter(config.views.src.filter))
 			.pipe($.pug(optsPug))
 			.pipe($.prettify(optsPretty))

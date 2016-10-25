@@ -20,10 +20,32 @@
 		}
 	}
 
+	// BTN-ICON
+	// ---------------------------------|
+	&-icon {
+		border-radius: 100%;
+		padding: 0;
+		line-height: $spacer-y * 2;
+		width: $spacer-y * 2;
+		height: $spacer-y * 2;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+		}
+	}
+
+	// BTN-OUTLINE-*
+	// ---------------------------------|
+	&[class*='btn-outline-'] {
+		border-width: $border-width;
+	}
+
 	// COLOUR MODIFIERS
 	// ---------------------------------|
 	// See config/vars/_colours.scss
-	@each $name, $colors in $themeMap {
+	@mixin btnStyles($name, $colors) {
 		&-#{$name} {
 			color: $color-white;
 			background: nth($colors, 1);
@@ -44,5 +66,39 @@
 				}
 			}
 		}
+
+		&-outline-#{$name} {
+			color: nth($colors, 1);
+			border-color: nth($colors, 1);
+			background: transparent;
+
+			&:hover,
+			&:focus {
+				color: $color-white;
+				background: nth($colors, 1);
+				border-color: nth($colors, 1);
+			}
+
+			&[disabled],
+			&:disabled,
+			&.btn-loading {
+				&:hover,
+				&:focus {
+					color: nth($colors, 1);
+					border-color: nth($colors, 1);
+					background: transparent;
+				}
+			}
+		}
+	}
+
+	// THEME
+	@each $name, $colors in $themeMap {
+		@include btnStyles($name, $colors);
+	}
+
+	// SOCIAL
+	@each $name, $colors in $socialMap {
+		@include btnStyles($name, $colors);
 	}
 }

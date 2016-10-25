@@ -213,6 +213,7 @@
 .form-group {
 	.form-control-feedback {
 		display: none;
+		font-size: $font-size-xs;
 	}
 
 	&[class*='has-'] {
@@ -229,44 +230,75 @@
 		}
 	}
 
-	// HAS-DANGER
+	// COMMON STYLES
+	// -------------------------------------|
+	$statesMap: (
+		danger: ($form-icon-danger, $color-danger),
+		success: ($form-icon-success, $color-success),
+		warning: ($form-icon-warning, $color-warning)
+	);
+	@each $state, $colors in $statesMap {
+		&.has-#{$state} {
+			.form-control {
+				background-image: nth($colors, 1);
+
+				&:focus {
+					border-color: nth($colors, 2);
+					box-shadow: none;
+				}
+			}
+
+			.input-group-addon {
+				background: nth($colors, 2);
+				border-width: $border-width;
+				color: $color-white;
+			}
+
+			.radio,
+			.checkbox {
+				&-custom {
+					border-color: nth($colors, 2);
+				}
+			}
+		}
+	}
+
+	// HAS-DANGER ANIMATION
 	// -------------------------------------|
 	&.has-danger {
-		label {
-			color: $color-danger;
-		}
-
-		.form-control {
+		.form-control,
+		.input-group-addon {
 			@include bounce(1, $speed * 2);
-			background-image: $form-icon-danger;
 		}
 
 		.radio,
 		.checkbox {
-			label {
-				color: $input-color;
-			}
-
 			&-custom {
-				border-color: $color-danger;
 				@include bounce(1, $speed * 2);
 			}
 		}
 	}
 
-	// HAS-SUCCESS
+	// HAS-LOADING ANIMATION
 	// -------------------------------------|
-	&.has-success {
-		.form-control {
-			background-image: $form-icon-success;
-		}
-	}
+	&.has-loading {
+		position: relative;
 
-	// HAS-WARNING
-	// -------------------------------------|
-	&.has-warning {
-		.form-control {
-			background-image: $form-icon-warning;
+		.form-control-feedback {
+			display: none !important;
+		}
+
+		&:after {
+			display: block;
+			line-height: 1;
+			font-family: $type-icon;
+			content: $fa-var-spinner;
+			@extend .fa-spin;
+			position: absolute;
+			top: 50%;
+			right: $input-padding-x;
+			color: $color-alpha;
+			margin-top: 7px;
 		}
 	}
 }

@@ -55,23 +55,84 @@ block content
 								span.required *
 							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
 							.form-control-feedback Warning!
+						.form-group.has-danger
+							label(for='login-email')
+								| Has Error + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Error!
+						.form-group.has-success
+							label(for='login-email')
+								| Has Error + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Success!
+						.form-group.has-warning
+							label(for='login-email')
+								| Has Error + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Warning!
+						.form-group
+							label(for='exampleInputPassword1')
+								| Regular Input
+								span.required *
+							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
+						.form-group.has-loading
+							label(for='exampleInputPassword1')
+								| Has Loading
+								span.required *
+							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
 						.form-group
 							label(for='exampleInputPassword1')
 								| Password (Disabled)
 								span.required *
 							input#exampleInputPassword1.form-control(type='password', placeholder='Password' disabled)
 						.form-group
+							label(for='exampleInputPassword1')
+								| Custom Select
+								span.required *
 							select.custom-select
 								option(selected disabled) Select...
 								option(value='1') One
 								option(value='2') Two
 								option(value='3') Three
 						.form-group
+							label(for='exampleInputPassword1')
+								| Regular Input + Addon
+								span.required *
 							.input-group
 								span#basic-addon1.input-group-addon
 									i.fa.fa-star
 								input.form-control(type='text' placeholder='Username' aria-describedby='basic-addon1')
 						.form-group
+							label(for='exampleInputPassword1')
+								| Custom File
+								span.required *
 							label.custom-file
 								input#file.custom-file-input(type='file')
 								span.custom-file-control
@@ -119,7 +180,14 @@ block content
 									.radio-custom
 									span.radio-label Option 2 (disabled checked)
 						button.btn(type='submit') Submit
-						button.btn.btn-alpha.btn-loading(type='submit') Loading
+						button.btn.btn-outline-alpha.btn-loading(type='submit') Loading
+						button.btn.btn-beta.btn-loading(type='submit') Loading
+						button.btn.btn-icon.btn-beta(type='button')
+							i.fa.fa-star
+						button.btn.btn-icon.btn-facebook(type='button')
+							i.fa.fa-facebook
+						button.btn.btn-icon.btn-outline-twitter(type='button')
+							i.fa.fa-twitter
 
 					hr
 
