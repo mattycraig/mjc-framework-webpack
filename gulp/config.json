@@ -40,6 +40,7 @@
 				"!app/**/*.html",
 				"!app/**/*.pug"
 			],
+			"content": "app/content/**/*.json",
 			"fonts": {
 				"npm": [
 					"node_modules/font-awesome/fonts/*.{eot,svg,ttf,woff,woff2}"
@@ -51,6 +52,10 @@
 			"root": {
 				"dev": ".tmp",
 				"prod": "dist"
+			},
+			"content": {
+				"dev": ".tmp/content",
+				"prod": "dist/content"
 			},
 			"fonts": {
 				"dev": ".tmp/css/fonts",

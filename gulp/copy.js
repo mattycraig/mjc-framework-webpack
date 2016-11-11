@@ -12,6 +12,14 @@ export default (gulp, config, development, production) => {
 			.pipe(production(gulp.dest(config.copy.dest.root.prod)));
 	});
 
+	// COPY:CONTENT
+	// --------------------------------------|
+	gulp.task('copy:content', () => {
+		return gulp.src(config.copy.src.content)
+			.pipe(development(gulp.dest(config.copy.dest.content.dev)))
+			.pipe(production(gulp.dest(config.copy.dest.content.prod)));
+	});
+
 	// COPY:FONTS:NPM
 	// --------------------------------------|
 	gulp.task('copy:fonts:npm', () => {

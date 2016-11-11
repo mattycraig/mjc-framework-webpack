@@ -5,17 +5,14 @@
 
 //-  DEV HEAD MIXIN
 //- -----------------------------------------------------------------|
-mixin devHead(name, subfolder)
-	- var subfolder = subfolder || ''
-	- var url = '/dev/components' + subfolder + '/_' + name + '.html'
+mixin devHead(name)
 	= '\n'
 	| <!-- BEGIN: #{name.toUpperCase()} -->
 
 
 //-  DEV FOOT MIXIN
 //- -----------------------------------------------------------------|
-mixin devFoot(name, subfolder)
-	- var subfolder = subfolder || ''
+mixin devFoot(name)
 	= '\n'
 	| <!-- END: #{name.toUpperCase()} -->
 	= '\n'

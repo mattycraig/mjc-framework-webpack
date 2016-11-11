@@ -33,8 +33,13 @@ export default (gulp, $, browserSync, reload) => {
 		// Watch pug + locals
 		gulp.watch([
 			'app/pug/**/*.pug',
-			'app/pug/_locals.json'
+			'app/pug/_locals.json',
 		], ['views']);
+
+		// Watch JSON content
+		gulp.watch([
+			'app/content/**/*.json',
+		], ['copy:content']).on('change', reload);
 	});
 
 	// PRODUCTION SERVE

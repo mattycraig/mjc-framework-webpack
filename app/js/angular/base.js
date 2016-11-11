@@ -4,30 +4,64 @@
 // Load up Angular.js
 
 // require('angular');
-
+// require('angular-messages');
+// require('angular-animate');
 
 // INIT
 //--------------------------------------------|
-// var app = angular.module('app', [
-// 	// Dependencies
-// ]);
+angular
+	.module('app', [
+		// 'ngMessages',
+		// 'ngAnimate'
+	]);
+
+// CONFIG
+//--------------------------------------------|
+// require('app/js/angular/config/config');
+
+// angular
+// 	.module('app')
+// 	.config(['dep', function(dep) {
+// 		// CONFIG
+// 	}]);
+
+// COMPONENT
+//--------------------------------------------|
+// require('app/js/angular/components/ex');
+
+// angular
+// 	.module('app')
+// 	.component('example', {
+// 		controllerAs: 'vm',
+// 		templateUrl: 'templates/components/example.html',
+// 		controller: ['dep', function(dep) {
+// 			var vm = this;
+//			// CONTROLLER
+// 		}
+// 	}]);
 
 // DIRECTIVE
 //--------------------------------------------|
-// app.directive('example', function(){
-// 	return {
-// 		templateUrl: 'js/templates/components/example.html',
-// 		restrict: 'E',
-// 		replace: true,
-// 		controller: 'ExampleController',
-// 		controllerAs: 'example',
-// 		scope: true
-// 	};
-// });
+// require('app/js/angular/directives/ex');
 
-// var ExampleController = function(){
-// 	this.ctrl = 'ExampleController';
-// 	var self = this;
-// };
-// ExampleController.$inject = [''];
-// app.controller('ExampleController', ExampleController);
+// angular
+// 	.module('app')
+// 	.directive('directiveEx', function() {
+// 		return {
+// 			restrict: 'A',
+// 			link: function(scope, elem, attr) {
+// 				// DIRECTIVE
+// 			}
+// 		};
+// 	});
+
+// FACTORY
+//--------------------------------------------|
+// require('app/js/angular/factories/ex');
+
+// angular
+// 	.module('app')
+// 	.factory('exFactory', ['$http', function($http) {
+// 		return $http.get('something.json');
+//		// FACTORY
+// 	}]);
