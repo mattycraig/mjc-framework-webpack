@@ -19,10 +19,10 @@
 //- #A : REPEATABLE BLOCKS
 //- ---------------------------------|
 mixin hlpTimes(limit)
-	- for (var i = 1; i <= limit; i++) {
+	- var i = 1
+	while i <= limit
 		block
-	- }
-
+		- i++
 
 //- #B : FORMS: YEAR SELECT
 //- ---------------------------------|
@@ -31,12 +31,13 @@ mixin hlpYears(className, lang)
 	- var getYear = new Date().getFullYear();
 	- var yearReset = getYear;
 	- var years = [];
+	- var i = 0
 
-	- for (var i = 0; i < 100; i++) {
-		- getYear = getYear - i;
-		- years.push(getYear);
-		- getYear = yearReset;
-	- }
+	while i < 100
+		- getYear = getYear - i
+		- years.push(getYear)
+		- getYear = yearReset
+		- i++
 
 	select(class='#{className} form-control')
 		if lang === 'fr'
@@ -45,7 +46,6 @@ mixin hlpYears(className, lang)
 			option(value='') -- Select
 		each year in years
 			option(value='#{year}')= year
-
 
 //- #C : FORMS: MONTH SELECT
 //- ---------------------------------|
@@ -64,7 +64,6 @@ mixin hlpMonths(className, lang)
 			each month in monthsEN
 				option(value='#{month.toLowerCase()}')= month
 
-
 //- #D : FORMS: NUMBERED DAYS SELECT
 //- ---------------------------------|
 mixin hlpDays(className, lang)
@@ -75,10 +74,11 @@ mixin hlpDays(className, lang)
 			option(value='') -- Choisir
 		else
 			option(value='') -- Select
-		- for (var i = 1; i < 32; i++) {
-			option(value='#{i}')= i
-		- }
 
+		- var i = 1
+		while i < 32
+			option(value='#{i}')= i
+			- i++
 
 //- #E : FORMS: DAYS OF THE WEEK SELECT
 //- ---------------------------------|
@@ -96,7 +96,6 @@ mixin hlpWeekdays(className, lang)
 			option(value='') -- Select
 			each day in daysEN
 				option(value='#{day.toLowerCase()}')= day
-
 
 //- #F : RESPONSIVE IMAGES (USING SRCSET & W)
 //- ---------------------------------|
@@ -118,8 +117,7 @@ mixin hlpSrcset(imgSubfolder, imgName, imgAlt, imgClass, imgExt, widthSm, widthM
 		alt='#{imgAlt}'
 		class='#{imgClass}'
 		srcset='#{buildSm}, #{buildMd}, #{buildLg}, #{buildLgst}'
-        )
-
+	)
 
 //- #G : RESPONSIVE IMAGES (USING SRCSET & X)
 //- ---------------------------------|
@@ -139,8 +137,7 @@ mixin hlpSrcsetX(imgSubfolder, imgName, imgAlt, imgClass, imgExt, width1x, width
 		alt='#{imgAlt}'
 		class='#{imgClass}'
 		srcset='#{build1x}, #{build2x}, #{build3x}'
-        )
-
+	)
 
 //- #H : RESPONSIVE IMAGES (USING PICTURE)
 //- ---------------------------------|

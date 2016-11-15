@@ -38,5 +38,5 @@ export default (gulp, config, development, production) => {
 
 	// COPY
 	// --------------------------------------|
-	gulp.task('copy', ['copy:root', 'copy:fonts:npm', 'copy:fonts:app']);
+	gulp.task('copy', ['copy:root', 'copy:content', 'copy:fonts:npm', 'copy:fonts:app']);
 };

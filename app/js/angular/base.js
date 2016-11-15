@@ -9,11 +9,11 @@
 
 // INIT
 //--------------------------------------------|
-angular
-	.module('app', [
-		// 'ngMessages',
-		// 'ngAnimate'
-	]);
+// angular
+// 	.module('app', [
+// 		// 'ngMessages',
+// 		// 'ngAnimate'
+// 	]);
 
 // CONFIG
 //--------------------------------------------|

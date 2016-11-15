@@ -1,0 +1,139 @@
+//- -----------------------------------------------------------------|
+//- DEFAULT LAYOUT
+//- -----------------------------------------------------------------|
+//- Contains all includes, blocks, & variables for the scaffolding of our default layout.
+
+//- SITE CONFIG
+//- ---------------------------------|
+include /config/_config
+
+//- PAGE VARIABLES
+//- ---------------------------------|
+block variables
+
+//- MIXINS
+//- ---------------------------------|
+include /mixins/_mixins
+
+doctype html
+html(class='no-js' lang= pageLang || siteLang)
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='x-ua-compatible' content='ie=edge')
+		if siteResponsive
+			meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		title= pageTitle
+		meta(name='theme-color' content= siteTheme)
+		link(rel='apple-touch-icon' href='apple-touch-icon.png')
+		link(href='css/app.css' rel='stylesheet')
+
+		//- PAGE SPECIFIC <HEAD>
+		//- -------------------------|
+		block head
+
+		//- META TAGS
+		//- -------------------------|
+		if siteMeta
+			meta(
+				name='description'
+				content= pageDesc
+			)
+			-
+				var metaData = {
+					'og:type' : 'website',
+					'og:site_name' : siteName,
+					'og:title' : ogTitle,
+					'og:description' : ogDesc,
+					'og:url' : pageUrl,
+					'og:image' : pageImage,
+					'twitter:card' : 'summary',
+					'twitter:site' : '@' + siteTwitter,
+					'twitter:title' : ogTitle,
+					'twitter:description' : ogDesc,
+					'twitter:image' : pageImage
+				}
+				var metaProp = {
+					'name' : ogTitle,
+					'description' : ogDesc,
+					'image' : pageImage
+				}
+			each content, property in metaData
+				meta(
+					property= property
+					content= content
+				)
+			each content, property in metaProp
+				meta(
+					itemprop= property
+					content= content
+				)
+
+	body&attributes(bodyAttrs)
+
+		//- PAGE SPECIFIC HEADER
+		//- -------------------------|
+		block header
+
+		//- <HEADER> PARTIAL
+		//- -------------------------|
+		if pageHdr
+			include /components/_header
+
+		//- <MAIN#CONTENT> BLOCK
+		//- -------------------------|
+		block content
+
+		//- <FOOTER> PARTIAL
+		//- -------------------------|
+		if pageFtr
+			include /components/_footer
+
+		//- PAGE SPECIFIC FOOTER
+		//- -------------------------|
+		block footer
+
+		//- OUTDATED BROWSER
+		//- -------------------------|
+		include /components/_outdated
+
+		//- JS + ANALYTICS
+		//- -------------------------|
+		script(src='js/bundle.js')
+		if siteAnalytics.length > 0
+			script.
+				ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+				ga('create','UA-#{siteAnalytics}','auto');ga('send','pageview')
+			script(src='https://www.google-analytics.com/analytics.js' async defer)
+
+		//- PAGE SPECIFIC FOOT
+		//- -------------------------|
+		block foot
+
+		//- DEVELOPER TOOLS
+		//- -------------------------|
+		if env == 'development' && devTools
+			style.
+				.pageNav {
+					position: fixed;
+					bottom: 0;
+					right: 0;
+					background: black;
+					padding:  1rem;
+					color: white;
+					transform: translate(85%, 85%);
+					width: 150px;
+					font-size: 12px;
+					opacity: 0.5;
+					text-transform: uppercase;
+					transition: all 0.1s;
+				}
+				.pageNav:hover {
+					transform: none;
+					opacity: 1;
+				}
+			nav.pageNav
+				h6 Pages
+				ul
+					each page in pages
+						li
+							a(href= page + '.html')= page

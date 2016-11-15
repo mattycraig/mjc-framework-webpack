@@ -2,25 +2,37 @@
 //- INDEX
 //- -----------------------------------------------------------------|
 //- Contains all blocks/variables & HTML for the index page
-//- This includes the page title, meta tags, and all content.
 
-extends /layouts/default/_default
+extends /layouts/_default
 
-//- -----------------------------------------------------------------|
+//- --------------------------------------|
 //- PAGE SPECIFIC VARIABLES
-//- -----------------------------------------------------------------|
+//- --------------------------------------|
 block variables
+	-
+		//- PAGE OPTIONS
+		//- -------------------------|
+		var pageHdr = true
+		var pageFtr = true
+		// var pageLang = 'en'
 
-	//- PAGE META
-	//- -----------------------------|
-	- var pageName = 'index'
-	- var pageTitle = 'PageTitle | ' + locals.site.name
-	- var pageDesc = 'PageDescription'
-	- var pageUrl = locals.site.url + '/' + pageName + '.html'
-	- var ogTitle = pageTitle
-	- var ogDesc = pageDesc
-	- var pageImage = locals.site.url + '/images/share/' + pageName + '.jpg'
+		//- PAGE META
+		//- -------------------------|
+		var pageName = 'index'
+		var pageTitle = 'PageTitle | ' + siteName
+		var pageDesc = 'PageDescription'
+		var pageUrl = siteUrl + '/' + pageName + '.html'
+		var ogTitle = pageTitle
+		var ogDesc = pageDesc
+		var pageImage = siteUrl + '/images/share/' + pageName + '.jpg'
 
+		//- BODY SPECIFIC
+		//- -------------------------|
+		// var bodyAttrs = {
+		// 	'class' : 'page-' + pageName,
+		// 	'id' : pageName,
+		// 	'data-sample' : 'sample'
+		// }
 
 //- -----------------------------------------------------------------|
 //- CONTENT
@@ -30,12 +42,6 @@ block content
 		.container
 			.row
 				.col-sm-12
-					h1= locals.content.test
-					p= locals.content.lorem
-					hr
-
-					p hello
-
 					form
 						.form-group.has-danger
 							label(for='exampleInputEmail1')
@@ -200,7 +206,7 @@ block content
 							a.btn.btn-primary(href='#') Go somewhere
 
 
-					include /layouts/default/components/_test
+					include /components/_test
 
 
 //- --------------------------------------|

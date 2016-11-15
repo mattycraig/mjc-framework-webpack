@@ -15,7 +15,7 @@ gulp dev
 At build time, lets make things production ready:
 
 ```
-gulp prod
+gulp
 ```
 
 To view our production files locally:

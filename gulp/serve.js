@@ -32,8 +32,7 @@ export default (gulp, $, browserSync, reload) => {
 
 		// Watch pug + locals
 		gulp.watch([
-			'app/pug/**/*.pug',
-			'app/pug/_locals.json',
+			'app/pug/**/*.pug'
 		], ['views']);
 
 		// Watch JSON content

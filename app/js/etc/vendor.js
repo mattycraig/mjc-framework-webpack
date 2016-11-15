@@ -24,7 +24,7 @@ require('jquery');
 require('script!tether');
 require('bootstrap/bootstrap');
 
-// OUTDATED BROWSER (<= IE8)
+// OUTDATED BROWSER (< IE9)
 // ---------------------------------|
 require('script!outdated-browser/outdatedbrowser/outdatedbrowser');
 outdatedBrowser({
@@ -38,3 +38,8 @@ outdatedBrowser({
 // ---------------------------------|
 require('modernizr');
 
+// POSTCSS
+// ---------------------------------|
+// require('cq-prolyfill')({
+// 	postcss: true
+// });
