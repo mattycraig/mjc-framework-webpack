@@ -12,7 +12,7 @@ Next, let's start our local web server. Our watch task will compile all necessar
 gulp dev
 ```
 
-At build time, lets make things production ready:
+Let's make things production ready:
 
 ```
 gulp
@@ -36,6 +36,12 @@ Rebuild only our scripts
 
 ```
 gulp task:scripts
+```
+
+Rebuild only our views
+
+```
+gulp task:views
 ```
 
 ### Useful Tasks

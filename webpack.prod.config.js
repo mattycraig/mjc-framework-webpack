@@ -1,5 +1,5 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
 	output: {
@@ -9,7 +9,7 @@ module.exports = {
 		loaders: [{
 			test: /\.js$/,
 			exclude: [/gulp/, /test/, /node_modules/],
-			loader: 'babel'
+			loader: 'babel-loader'
 		}]
 	},
 	plugins: [
@@ -30,13 +30,6 @@ module.exports = {
 	],
 	resolve: {
 		root: path.resolve(__dirname),
-		alias: {
-			helpers: 'app/js/etc/helpers',
-			vendor: 'app/js/etc/vendor',
-			modernizr: 'app/js/etc/modernizr',
-			bootstrap: 'bootstrap/dist/js',
-			jq: 'app/js/jquery/base',
-			ng: 'app/js/angular/base'
-		}
+		extensions: ['', '.js']
 	}
 };

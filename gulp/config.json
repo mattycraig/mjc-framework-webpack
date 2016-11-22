@@ -4,12 +4,9 @@
 			".tmp",
 			"dist"
 		],
-		"styles": [
-			"dist/css"
-		],
-		"scripts": [
-			"dist/js"
-		]
+		"styles": "dist/css",
+		"scripts": "dist/js",
+		"views": "dist/**/*.html"
 	},
 	"styles": {
 		"src": {

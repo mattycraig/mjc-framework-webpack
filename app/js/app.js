@@ -3,7 +3,8 @@
 //--------------------------------------------|
 // Load all of our js files
 
-require('helpers');
-require('vendor');
-require('jq');
-require('ng');
+require('app/js/etc/helpers');
+require('app/js/etc/vendor');
+require('app/js/jquery/base');
+// require('app/js/angular/base');
+// require('app/js/react/base');

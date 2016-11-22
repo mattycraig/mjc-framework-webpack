@@ -1,7 +1,4 @@
 {
-	"ecmaFeatures": {
-		"modules": true
-	},
 	"env": {
 		"browser": true,
 		"node": true,
@@ -12,5 +9,15 @@
 			2,
 			"single"
 		]
-	}
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"modules": true,
+			"jsx": true
+		},
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react"
+	]
 }

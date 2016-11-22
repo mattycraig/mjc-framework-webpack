@@ -19,4 +19,8 @@ export default (gulp, $, config) => {
 	// CLEAN JS
 	// --------------------------------------|
 	clean('clean:scripts', config.clean.scripts);
+
+	// CLEAN VIEWS
+	// --------------------------------------|
+	clean('clean:views', config.clean.views);
 };

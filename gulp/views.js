@@ -55,12 +55,13 @@ export default (gulp, $, reload, config, development, production) => {
 	// --------------------------------------|
 	gulp.task('views', () => {
 		return gulp.src(config.views.src.dev)
-			.pipe(development($.changed('.tmp', {extension: '.html'})))
-			.pipe(development($.if(global.isWatching, $.cached('pug'))))
-			.pipe(development($.pugInheritance({
-				basedir: 'app/pug',
-				skip: 'node_modules'
-			})))
+			// CURRENTLY DOESNT WORK
+			// .pipe(development($.changed('.tmp', {extension: '.html'})))
+			// .pipe(development($.if(global.isWatching, $.cached('pug'))))
+			// .pipe(development($.pugInheritance({
+			// 	basedir: 'app/pug',
+			// 	skip: 'node_modules'
+			// })))
 			.pipe($.filter(config.views.src.filter))
 			.pipe(development($.pug(optsPugDev)))
 			.pipe(production($.pug(optsPugProd)))
@@ -72,5 +73,15 @@ export default (gulp, $, reload, config, development, production) => {
 
 	gulp.task('views:watch', () => {
 		global.isWatching = true;
+	});
+
+	// INDIVIDUAL TASK: VIEWS
+	// --------------------------------------|
+	gulp.task('task:views', ['clean:views'], () => {
+		return gulp.src(config.views.src.dev)
+			.pipe($.filter(config.views.src.filter))
+			.pipe($.pug(optsPugProd))
+			.pipe($.prettify(optsPretty))
+			.pipe(gulp.dest(config.views.dest.prod));
 	});
 };
