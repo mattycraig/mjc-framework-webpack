@@ -31,7 +31,7 @@ block variables
 		// var bodyAttrs = {
 		// 	'class' : 'page-' + pageName,
 		// 	'id' : pageName,
-		// 	'data-sample' : 'sample'
+		// 	'data-example' : 'example'
 		// }
 
 //- -----------------------------------------------------------------|
@@ -41,7 +41,9 @@ block content
 	main#content(role='main')
 		.container
 			.row
-				.col-sm-12
+				.col-sm-12.u-marginTop-5
+
+					#root
 
 					form
 						.form-group.has-danger
@@ -196,18 +198,7 @@ block content
 						button.btn.btn-icon.btn-outline-twitter(type='button')
 							i.fa.fa-twitter
 
-					hr
-
-					.card
-						.card-block
-							h4.card-title Card title
-							a(href='#') Testing
-							p.card-text
-								| Some quick example text to build on the card title and make up the bulk of the card's content.
-							a.btn.btn-primary(href='#') Go somewhere
-
-
-					include /components/_test
+					//- include /components/_test
 
 
 //- --------------------------------------|

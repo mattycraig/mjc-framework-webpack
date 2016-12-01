@@ -10,7 +10,7 @@ require('angular');
 // INIT
 // --------------------------------------------|
 angular
-	.module('app', [
+	.module('myApp', [
 		// 'ngMessages',
 		// 'ngAnimate'
 	]);
@@ -20,48 +20,47 @@ angular
 // require('app/js/angular/config/config');
 
 // angular
-// 	.module('app')
+// 	.module('myApp')
 // 	.config(['$http', function($http) {
 // 		// CONFIG
 // 	}]);
 
 // COMPONENT
 //--------------------------------------------|
-// require('app/js/angular/components/ex');
+// require('app/js/angular/components/app');
 
-angular
-	.module('app')
-	.component('example', {
-		controllerAs: 'vm',
-		templateUrl: 'templates/components/example.html',
-		controller: [function() {
-			var vm = this;
-			// CONTROLLER
-		}
-	]});
+// angular
+// 	.module('myApp')
+// 	.component('example', {
+// 		controllerAs: 'vm',
+// 		templateUrl: 'templates/components/example.html',
+// 		controller: [function() {
+// 			var vm = this;
+// 			// CONTROLLER
+// 		}
+// 	]});
 
 // DIRECTIVE
 //--------------------------------------------|
 // require('app/js/angular/directives/ex');
 
-angular
-	.module('app')
-	.directive('directiveEx', function() {
-		return {
-			restrict: 'A',
-			link: function(scope, elem, attr) {
-				// DIRECTIVE
-			}
-		};
-	});
+// angular
+// 	.module('myApp')
+// 	.directive('directiveEx', function() {
+// 		return {
+// 			restrict: 'A',
+// 			link: function(scope, elem, attr) {
+// 				// DIRECTIVE
+// 			}
+// 		};
+// 	});
 
 // FACTORY
 //--------------------------------------------|
 // require('app/js/angular/factories/ex');
 
 // angular
-// 	.module('app')
+// 	.module('myApp')
 // 	.factory('exFactory', ['$http', function($http) {
-// 		// return $http.get('something.json');
 // 		// FACTORY
 // 	}]);

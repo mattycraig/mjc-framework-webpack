@@ -4,37 +4,29 @@
 
 export default (gulp, config, development, production) => {
 
+	let copy = (name, source, dev, prod) => {
+		gulp.task(name, () => {
+			return gulp.src(source)
+				.pipe(development(gulp.dest(dev)))
+				.pipe(production(gulp.dest(prod)));
+		});
+	}
+
 	// COPY:ROOT
 	// --------------------------------------|
-	gulp.task('copy:root', () => {
-		return gulp.src(config.copy.src.root)
-			.pipe(development(gulp.dest(config.copy.dest.root.dev)))
-			.pipe(production(gulp.dest(config.copy.dest.root.prod)));
-	});
+	copy('copy:root', config.copy.src.root, config.copy.dest.root.dev, config.copy.dest.root.prod);
 
 	// COPY:CONTENT
 	// --------------------------------------|
-	gulp.task('copy:content', () => {
-		return gulp.src(config.copy.src.content)
-			.pipe(development(gulp.dest(config.copy.dest.content.dev)))
-			.pipe(production(gulp.dest(config.copy.dest.content.prod)));
-	});
+	copy('copy:content', config.copy.src.content, config.copy.dest.content.dev, config.copy.dest.content.prod);
 
 	// COPY:FONTS:NPM
 	// --------------------------------------|
-	gulp.task('copy:fonts:npm', () => {
-		return gulp.src(config.copy.src.fonts.npm)
-			.pipe(development(gulp.dest(config.copy.dest.fonts.dev)))
-			.pipe(production(gulp.dest(config.copy.dest.fonts.prod)));
-	});
+	copy('copy:fonts:npm', config.copy.src.fonts.npm, config.copy.dest.fonts.dev, config.copy.dest.fonts.prod);
 
 	// COPY:FONTS:APP
 	// --------------------------------------|
-	gulp.task('copy:fonts:app', () => {
-		return gulp.src(config.copy.src.fonts.app)
-			.pipe(development(gulp.dest(config.copy.dest.fonts.dev)))
-			.pipe(production(gulp.dest(config.copy.dest.fonts.prod)));
-	});
+	copy('copy:fonts:app', config.copy.src.fonts.app, config.copy.dest.fonts.dev, config.copy.dest.fonts.prod);
 
 	// COPY
 	// --------------------------------------|

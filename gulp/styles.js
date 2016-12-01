@@ -37,7 +37,6 @@ export default (gulp, $, reload, config, development, production) => {
 	// --------------------------------------|
 	let optsPostCSS = [
 		require('autoprefixer')(optsAutoprefixer),
-		require('cq-prolyfill/postcss-plugin'),
 		require('css-mqpacker')
 	];
 
