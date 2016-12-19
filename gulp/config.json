@@ -6,7 +6,8 @@
 		],
 		"styles": "dist/css",
 		"scripts": "dist/js",
-		"views": "dist/**/*.html"
+		"views": "dist/**/*.html",
+		"images": "dist/images"
 	},
 	"styles": {
 		"src": {

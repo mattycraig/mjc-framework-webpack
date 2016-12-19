@@ -23,4 +23,8 @@ export default (gulp, $, config) => {
 	// CLEAN VIEWS
 	// --------------------------------------|
 	clean('clean:views', config.clean.views);
+
+	// CLEAN IMAGES
+	// --------------------------------------|
+	clean('clean:images', config.clean.images);
 };

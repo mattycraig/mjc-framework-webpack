@@ -6,7 +6,7 @@ To get started, we need to install all dependencies for our new project:
 npm install
 ```
 
-Next, let's start our local web server. Our watch task will compile all necessary files when changed (Jade, SCSS, JS, etc):
+Next, let's start our local web server. Our watch task will compile all necessary files when changed (PUG, SCSS, JS, etc):
 
 ```
 gulp dev

@@ -23,9 +23,12 @@ html(lang= pageLang || siteLang)
 		if siteResponsive
 			meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		title= pageTitle
-		meta(name='theme-color' content= siteTheme)
-		link(href='apple-touch-icon.png' rel='apple-touch-icon' )
 		link(href='css/app.css' rel='stylesheet')
+		link(href='apple-touch-icon.png' rel='apple-touch-icon' )
+		if siteTheme
+			meta(name='theme-color' content= siteTheme)
+		if siteVerification
+			meta(name='google-site-verification' content= siteVerification)
 
 		//- PAGE SPECIFIC <HEAD>
 		//- -------------------------|
@@ -33,59 +36,45 @@ html(lang= pageLang || siteLang)
 
 		//- META TAGS
 		//- -------------------------|
-		if siteMeta_Adv
+		if siteMeta
 			-
 				var metaAdv = {
+					'description': (pageDesc || siteDesc),
 					'subject': siteSubject,
 					'url': siteUrl,
-					'rating': siteRating,
-					'google-site-verification': siteVerfication
+					'rating': siteRating
 				}
-			each content, name in metaAdv
-				if (content && name)
-					meta(
-						name= name
-						content= content
-					)
-		if siteMeta
-			meta(
-				name='description'
-				content= pageDesc
-			)
-			-
 				var metaData = {
+					'fb:app_id': siteFacebookID,
 					'og:type': 'website',
 					'og:site_name': siteName,
 					'og:title': ogTitle,
-					'og:description': ogDesc,
+					'og:description': (ogDesc || siteDesc),
 					'og:url': pageUrl,
 					'og:type': 'website',
 					'og:locale': (pageLang || siteLang) + '_' + siteLocale,
 					'og:image': pageImage || siteImage,
 					'twitter:card': 'summary',
-					'twitter:site': '@' + siteTwitter,
+					'twitter:site': siteTwitter,
 					'twitter:url': pageUrl,
 					'twitter:title': ogTitle,
-					'twitter:description': ogDesc,
+					'twitter:description': (ogDesc || siteDesc),
 					'twitter:image': pageImage || siteImage
 				}
 				var metaProp = {
 					'name': ogTitle,
-					'description': ogDesc,
+					'description': (ogDesc|| siteDesc),
 					'image': pageImage || siteImage
 				}
+			each content, name in metaAdv
+				if (content && name)
+					meta(name= name content= content)
 			each content, property in metaData
 				if (content && property)
-					meta(
-						property= property
-						content= content
-					)
-			each content, property in metaProp
-				if (content && property)
-					meta(
-						itemprop= property
-						content= content
-					)
+					meta(property= property content= content)
+			each content, itemprop in metaProp
+				if (content && itemprop)
+					meta(itemprop= itemprop content= content)
 
 	body&attributes(bodyAttrs)
 

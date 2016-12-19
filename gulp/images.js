@@ -21,7 +21,7 @@ export default (gulp, $, config) => {
 
 	// INDIVIDUAL TASK: IMAGES
 	// --------------------------------------|
-	gulp.task('task:images', () => {
+	gulp.task('task:images', ['clean:images'], () => {
 		gulp.start('images');
 	});
 };

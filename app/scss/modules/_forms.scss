@@ -195,6 +195,7 @@
 	.custom-select,
 	.custom-file {
 		width: 100%;
+		transition: border-color $speed;
 	}
 
 	.custom-file-input {
@@ -203,6 +204,19 @@
 				transition: border-color $speed;
 				@include focusStyles;
 			}
+		}
+	}
+
+	.custom-file-name {
+		&:after {
+			content: attr(data-content) !important;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			height: 100%;
+			overflow: hidden;
+			padding: $input-padding-y $input-padding-x;
 		}
 	}
 }
@@ -283,6 +297,11 @@
 	// -------------------------------------|
 	&.has-loading {
 		position: relative;
+
+		.form-control {
+			cursor: $cursor-disabled;
+			background: $input-bg-disabled;
+		}
 
 		.form-control-feedback {
 			display: none !important;

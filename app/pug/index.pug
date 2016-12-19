@@ -142,8 +142,14 @@ block content
 								| Custom File
 								span.required *
 							label.custom-file
-								input#file.custom-file-input(type='file')
-								span.custom-file-control
+								input#file.custom-file-input(
+									type='file'
+									data-toggle='custom-file'
+									data-target='#file-upload'
+								)
+								span.custom-file-control.custom-file-name#file-upload(
+									data-content='Choose file...'
+								)
 						.form-group
 							label
 								| Textarea
