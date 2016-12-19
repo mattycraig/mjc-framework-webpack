@@ -39,7 +39,7 @@ html(lang= pageLang || siteLang)
 		if siteMeta
 			-
 				var metaAdv = {
-					'description': (pageDesc || siteDesc),
+					'description': pageDesc || siteDesc,
 					'subject': siteSubject,
 					'url': siteUrl,
 					'rating': siteRating
@@ -48,22 +48,21 @@ html(lang= pageLang || siteLang)
 					'fb:app_id': siteFacebookID,
 					'og:type': 'website',
 					'og:site_name': siteName,
-					'og:title': ogTitle,
-					'og:description': (ogDesc || siteDesc),
-					'og:url': pageUrl,
-					'og:type': 'website',
+					'og:title': ogTitle || siteName,
+					'og:description': ogDesc || siteDesc,
+					'og:url': pageUrl || siteUrl,
 					'og:locale': (pageLang || siteLang) + '_' + siteLocale,
 					'og:image': pageImage || siteImage,
 					'twitter:card': 'summary',
 					'twitter:site': siteTwitter,
-					'twitter:url': pageUrl,
-					'twitter:title': ogTitle,
-					'twitter:description': (ogDesc || siteDesc),
+					'twitter:url': pageUrl || siteUrl,
+					'twitter:title': ogTitle || siteName,
+					'twitter:description': ogDesc || siteDesc,
 					'twitter:image': pageImage || siteImage
 				}
 				var metaProp = {
-					'name': ogTitle,
-					'description': (ogDesc|| siteDesc),
+					'name': ogTitle || siteName,
+					'description': ogDesc|| siteDesc,
 					'image': pageImage || siteImage
 				}
 			each content, name in metaAdv
