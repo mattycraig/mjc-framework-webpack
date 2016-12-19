@@ -24,7 +24,7 @@ html(lang= pageLang || siteLang)
 			meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		title= pageTitle
 		meta(name='theme-color' content= siteTheme)
-		link(rel='apple-touch-icon' href='apple-touch-icon.png')
+		link(href='apple-touch-icon.png' rel='apple-touch-icon' )
 		link(href='css/app.css' rel='stylesheet')
 
 		//- PAGE SPECIFIC <HEAD>
@@ -33,6 +33,20 @@ html(lang= pageLang || siteLang)
 
 		//- META TAGS
 		//- -------------------------|
+		if siteMeta_Adv
+			-
+				var metaAdv = {
+					'subject': siteSubject,
+					'url': siteUrl,
+					'rating': siteRating,
+					'google-site-verification': siteVerfication
+				}
+			each content, name in metaAdv
+				if (content && name)
+					meta(
+						name= name
+						content= content
+					)
 		if siteMeta
 			meta(
 				name='description'
@@ -40,33 +54,38 @@ html(lang= pageLang || siteLang)
 			)
 			-
 				var metaData = {
-					'og:type' : 'website',
-					'og:site_name' : siteName,
-					'og:title' : ogTitle,
-					'og:description' : ogDesc,
-					'og:url' : pageUrl,
-					'og:image' : pageImage,
-					'twitter:card' : 'summary',
-					'twitter:site' : '@' + siteTwitter,
-					'twitter:title' : ogTitle,
-					'twitter:description' : ogDesc,
-					'twitter:image' : pageImage
+					'og:type': 'website',
+					'og:site_name': siteName,
+					'og:title': ogTitle,
+					'og:description': ogDesc,
+					'og:url': pageUrl,
+					'og:type': 'website',
+					'og:locale': (pageLang || siteLang) + '_' + siteLocale,
+					'og:image': pageImage || siteImage,
+					'twitter:card': 'summary',
+					'twitter:site': '@' + siteTwitter,
+					'twitter:url': pageUrl,
+					'twitter:title': ogTitle,
+					'twitter:description': ogDesc,
+					'twitter:image': pageImage || siteImage
 				}
 				var metaProp = {
-					'name' : ogTitle,
-					'description' : ogDesc,
-					'image' : pageImage
+					'name': ogTitle,
+					'description': ogDesc,
+					'image': pageImage || siteImage
 				}
 			each content, property in metaData
-				meta(
-					property= property
-					content= content
-				)
+				if (content && property)
+					meta(
+						property= property
+						content= content
+					)
 			each content, property in metaProp
-				meta(
-					itemprop= property
-					content= content
-				)
+				if (content && property)
+					meta(
+						itemprop= property
+						content= content
+					)
 
 	body&attributes(bodyAttrs)
 
@@ -99,10 +118,9 @@ html(lang= pageLang || siteLang)
 		//- JS + ANALYTICS
 		//- -------------------------|
 		script(src='js/bundle.js')
-		if siteAnalytics.length > 0
+		if siteAnalytics
 			script.
-				ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-				ga('create','UA-#{siteAnalytics}','auto');ga('send','pageview')
+				ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;ga('create','UA-#{siteAnalytics}','auto');ga('send','pageview')
 			script(src='https://www.google-analytics.com/analytics.js' async defer)
 
 		//- PAGE SPECIFIC FOOT

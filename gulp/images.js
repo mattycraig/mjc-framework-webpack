@@ -18,4 +18,10 @@ export default (gulp, $, config) => {
 			.on('error', function(err){ console.log(err); this.end; })
 			.pipe(gulp.dest(config.images.dest));
 	});
+
+	// INDIVIDUAL TASK: IMAGES
+	// --------------------------------------|
+	gulp.task('task:images', () => {
+		gulp.start('images');
+	});
 };

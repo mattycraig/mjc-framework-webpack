@@ -23,6 +23,10 @@ To view our production files locally:
 ```
 gulp serve:prod
 ```
+OR
+```
+gulp serve:dist
+```
 
 ### Individual Tasks
 
@@ -42,6 +46,12 @@ Rebuild only our views
 
 ```
 gulp task:views
+```
+
+Reminify only our images
+
+```
+gulp task:images
 ```
 
 ### Useful Tasks

@@ -52,4 +52,8 @@ export default (gulp, $, browserSync, reload) => {
 			}
 		});
 	});
+
+	gulp.task('serve:dist', () => {
+		gulp.start('serve:prod');
+	});
 };

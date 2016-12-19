@@ -31,9 +31,9 @@ angular
 
 // angular
 // 	.module('myApp')
-// 	.component('example', {
+// 	.component('app', {
 // 		controllerAs: 'vm',
-// 		templateUrl: 'templates/components/example.html',
+// 		templateUrl: 'templates/components/app.html',
 // 		controller: [function() {
 // 			var vm = this;
 // 			// CONTROLLER
