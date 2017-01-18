@@ -1,0 +1,273 @@
+//- -----------------------------------------------------------------|
+//- INDEX
+//- -----------------------------------------------------------------|
+//- Contains all blocks/variables & HTML for the index page
+
+extends /layouts/_default
+
+//- --------------------------------------|
+//- PAGE SPECIFIC VARIABLES
+//- --------------------------------------|
+block variables
+	-
+		//- PAGE OPTIONS
+		//- -------------------------|
+		var pageHdr = true
+		var pageFtr = true
+		// var pageLang = 'en'
+
+		//- PAGE META
+		//- -------------------------|
+		var pageName = 'index'
+		var pageTitle = 'PageTitle | ' + siteName
+		var pageDesc = 'PageDescription'
+		var pageUrl = siteUrl + '/' + pageName + '.html'
+		var ogTitle = pageTitle
+		var ogDesc = pageDesc
+		// var pageImage = siteUrl + '/images/share/' + pageName + '.jpg'
+
+		//- BODY SPECIFIC
+		//- -------------------------|
+		var bodyAttrs = {
+			// 'class' : 'page-' + pageName,
+			// 'data-example' : 'example'
+		}
+
+//- -----------------------------------------------------------------|
+//- CONTENT
+//- -----------------------------------------------------------------|
+block content
+	main#content(role='main')
+		.container
+			.row
+				.col-sm-12.u-marginTop-5
+
+					#root
+
+					form
+						.form-group.has-danger
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Error!
+						.form-group.has-success
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Success!
+						.form-group.has-warning
+							label(for='exampleInputEmail1')
+								| Email address
+								span.required *
+							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
+							.form-control-feedback Warning!
+						.form-group.has-danger
+							label(for='login-email')
+								| Has Danger + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Error!
+						.form-group.has-success
+							label(for='login-email')
+								| Has Danger + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Success!
+						.form-group.has-warning
+							label(for='login-email')
+								| Has Danger + Addon
+								span.required *
+							.input-group
+								span.input-group-addon
+									i.fa.fa-user
+								input#login-email.form-control(
+									type='email'
+									placeholder='myemail@email.com'
+									required
+									name='email'
+								)
+							.form-control-feedback Warning!
+						.form-group
+							label(for='exampleInputPassword1')
+								| Regular Input
+								span.required *
+							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
+						.form-group.has-loading
+							label(for='exampleInputPassword1')
+								| Has Loading
+								span.required *
+							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
+						.form-group
+							label(for='exampleInputPassword1')
+								| Password (Disabled)
+								span.required *
+							input#exampleInputPassword1.form-control(type='password', placeholder='Password' disabled)
+						.form-group
+							label(for='exampleInputPassword1')
+								| Custom Select
+								span.required *
+							select.custom-select
+								option(selected disabled) Select...
+								option(value='1') One
+								option(value='2') Two
+								option(value='3') Three
+						.form-group
+							label(for='exampleInputPassword1')
+								| Regular Input + Addon
+								span.required *
+							.input-group
+								span#basic-addon1.input-group-addon
+									i.fa.fa-star
+								input.form-control(type='text' placeholder='Username' aria-describedby='basic-addon1')
+						.form-group
+							label(for='exampleInputPassword1')
+								| Custom File
+								span.required *
+							label.custom-file
+								input#file.custom-file-input(
+									type='file'
+									data-toggle='custom-file'
+									data-target='#file-upload'
+								)
+								span.custom-file-control.custom-file-name#file-upload(
+									data-content='Choose file...'
+								)
+						.form-group
+							label
+								| Textarea
+								span.required *
+							textarea.form-control
+						.form-group
+							label
+								| Checkbox Styles
+								span.required *
+							.checkbox
+								label
+									input(type='checkbox')
+									.checkbox-custom
+									span.checkbox-label Check me out
+								label
+									input(type='checkbox' disabled checked)
+									.checkbox-custom
+									span.checkbox-label Check me out (disabled checked)
+								.form-control-feedback Error!
+						.form-group.has-danger
+							label
+								| Checkbox Styles With Has Danger
+								span.required *
+							.checkbox
+								label
+									input(type='checkbox')
+									.checkbox-custom
+									span.checkbox-label Check me out
+								label
+									input(type='checkbox' disabled checked)
+									.checkbox-custom
+									span.checkbox-label Check me out (disabled checked)
+								.form-control-feedback Error!
+						.form-group
+							label
+								| Radio Styles
+								span.required *
+							.radio
+								label
+									input(
+										type='radio'
+										required
+										name='test1'
+										value='prospective'
+									)
+									.radio-custom
+									span.radio-label Option 1
+								label
+									input(
+										type='radio'
+										required
+										name='test1'
+										value='existing'
+										disabled
+										checked
+									)
+									.radio-custom
+									span.radio-label Option 2 (disabled checked)
+								.form-control-feedback Error!
+						.form-group.has-danger
+							label
+								| Radio Styles With Has Danger
+								span.required *
+							.radio
+								label
+									input(
+										type='radio'
+										required
+										name='test2'
+										value='prospective'
+									)
+									.radio-custom
+									span.radio-label Option 1
+								label
+									input(
+										type='radio'
+										required
+										name='test2'
+										value='existing'
+										disabled
+										checked
+									)
+									.radio-custom
+									span.radio-label Option 2 (disabled checked)
+								.form-control-feedback Error!
+						button.btn(type='submit') Submit
+						button.btn.btn-outline-alpha.btn-loading(type='submit') Loading
+						button.btn.btn-beta.btn-loading(type='submit') Loading
+						button.btn.btn-icon.btn-beta(type='button')
+							i.fa.fa-star
+						button.btn.btn-icon.btn-facebook(type='button')
+							i.fa.fa-facebook
+						button.btn.btn-icon.btn-outline-twitter(type='button')
+							i.fa.fa-twitter
+
+					//- include /components/_test
+
+
+//- --------------------------------------|
+//- HEAD - PAGE SPECIFIC <HEAD>
+//- --------------------------------------|
+block head
+	//- Usually not needed.
+
+//- --------------------------------------|
+//- HEAD - PAGE SPECIFIC HEADER
+//- --------------------------------------|
+block header
+	//- Usually not needed.
+
+//- --------------------------------------|
+//- FOOTER - PAGE SPECIFIC FOOTER
+//- --------------------------------------|
+block footer
+	//- Usually not needed.
+
+//- --------------------------------------|
+//- FOOTER - PAGE SPECIFIC FOOT (JS)
+//- --------------------------------------|
+block foot
+	//- Usually not needed.

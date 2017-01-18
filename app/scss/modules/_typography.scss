@@ -7,11 +7,11 @@
 // ROOTS
 // -----------------------------------------------------------------|
 html {
-	font-size: $type-small;
+	font-size: $font-size-sm;
 
 	// DESKTOP
 	@include media-breakpoint-up(md) {
-		font-size: $font-size-root;
+		font-size: $font-size-base;
 	}
 }
 

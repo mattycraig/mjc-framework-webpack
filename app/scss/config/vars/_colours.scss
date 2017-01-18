@@ -7,10 +7,10 @@
 // ---------------------------------|
 $color-white: #fff;
 $color-black: #000;
-$color-success: #5cb85c;
-$color-info: #5bc0de;
-$color-warning: #f0ad4e;
-$color-danger: #d9534f;
+$color-success: $brand-success;
+$color-info: $brand-info;
+$color-warning: $brand-warning;
+$color-danger: $brand-danger;
 
 // GREYS
 // ---------------------------------|
@@ -42,11 +42,10 @@ $color-pinterest: #cb2027;
 $color-instagram: #517fa4;
 $color-flickr: #ff0084;
 $color-tumblr: #32506d;
-$color-vine: #00bf8f;
 
 // THEME
 // ---------------------------------|
-$color-alpha: $color-vine;
+$color-alpha: $color-linkedin;
 $color-alpha-low: darken($color-alpha, 10%);
 $color-alpha-high: lighten($color-alpha, 10%);
 
@@ -116,6 +115,5 @@ $socialMap: (
 	pinterest: ($color-pinterest, lighten($color-pinterest , 10%), darken($color-pinterest, 10%)),
 	instagram: ($color-instagram, lighten($color-instagram , 10%), darken($color-instagram, 10%)),
 	flickr: ($color-flickr, lighten($color-flickr, 10%), darken($color-flickr, 10%)),
-	tumblr: ($color-tumblr, lighten($color-tumblr, 10%), darken($color-tumblr, 10%)),
-	vine: ($color-vine, lighten($color-vine, 10%), darken($color-vine, 10%))
+	tumblr: ($color-tumblr, lighten($color-tumblr, 10%), darken($color-tumblr, 10%))
 );
