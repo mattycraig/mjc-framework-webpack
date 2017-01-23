@@ -30,7 +30,7 @@ export default (gulp, $, browserSync, reload) => {
 			'app/js/**/*.js'
 		], ['webpack']);
 
-		// Watch pug + locals
+		// Watch pug
 		gulp.watch([
 			'app/pug/**/*.pug'
 		], ['views']);
