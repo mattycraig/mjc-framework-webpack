@@ -5,7 +5,7 @@
 
 // jQUERY
 // ---------------------------------|
-require('jquery');
+require('script!jquery');
 
 // LODASH
 // ---------------------------------|
