@@ -33,9 +33,9 @@
 		(function(window){
 			var undefined,
 				link = function (href) {
-						var a = window.document.createElement('a');
-						a.href = href;
-						return a;
+					var a = window.document.createElement('a');
+					a.href = href;
+					return a;
 				};
 			window.onerror = function (message, file, line, column) {
 				var host = link(file).hostname;
