@@ -8,14 +8,14 @@
 	// BTN-LOADING
 	// ---------------------------------|
 	&-loading {
-		cursor: $cursor-disabled;
+		cursor: not-allowed;
 
 		&:after {
 			display: inline-block;
 			line-height: 1;
 			font-family: $type-icon;
 			content: $fa-var-spinner;
-			margin-left: $btn-padding-x-sm;
+			margin-left: $spacer / 2;
 			@extend .fa-spin;
 		}
 	}
@@ -25,9 +25,9 @@
 	&-icon {
 		border-radius: 100%;
 		padding: 0;
-		line-height: $spacer-y * 2;
-		width: $spacer-y * 2;
-		height: $spacer-y * 2;
+		line-height: $spacer * 2;
+		width: $spacer * 2;
+		height: $spacer * 2;
 		text-align: center;
 
 		&:hover,

@@ -7,12 +7,7 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
-		preLoaders: [{
-			test: /\.js$/,
-			exclude: [/gulp/, /test/, /node_modules/],
-			loader: 'eslint-loader'
-		}],
-		loaders: [{
+		rules: [{
 			test: /\.js$/,
 			exclude: [/gulp/, /test/, /node_modules/],
 			loader: 'babel-loader'
@@ -22,11 +17,14 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',
-			'window.jQuery': 'jquery'
+			'window.jQuery': 'jquery',
+			Popper: ['popper.js', 'default']
 		})
 	],
 	resolve: {
-		root: path.resolve(__dirname),
-		extensions: ['', '.js']
+		modules: [
+			path.resolve(__dirname),
+			'node_modules'
+		]
 	}
 };

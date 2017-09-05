@@ -6,7 +6,7 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 	module: {
-		loaders: [{
+		rules: [{
 			test: /\.js$/,
 			exclude: [/gulp/, /test/, /node_modules/],
 			loader: 'babel-loader'
@@ -16,7 +16,8 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',
-			'window.jQuery': 'jquery'
+			'window.jQuery': 'jquery',
+			Popper: ['popper.js', 'default']
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
@@ -28,7 +29,9 @@ module.exports = {
 		})
 	],
 	resolve: {
-		root: path.resolve(__dirname),
-		extensions: ['', '.js']
+		modules: [
+			path.resolve(__dirname),
+			'node_modules'
+		]
 	}
 };
