@@ -5,12 +5,65 @@
 
 // DEFAULTS
 // ---------------------------------|
-$color-white: #fff;
-$color-black: #000;
-$color-success: #5cb85c;
-$color-info: #613d7c;
-$color-warning: #f0ad4e;
-$color-danger: #d9534f;
+$white:  #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:  #000;
+
+$grays: ();
+$grays: map-merge((
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+), $grays);
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$colors: ();
+$colors: map-merge((
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
+), $colors);
+
+$color-white: $white;
+$color-black: $black;
+$color-success: $green;
+$color-info: $cyan;
+$color-warning: $yellow;
+$color-danger: $red;
 
 // GREYS
 // ---------------------------------|
@@ -45,11 +98,11 @@ $color-tumblr: #32506d;
 
 // THEME
 // ---------------------------------|
-$color-alpha: $color-linkedin;
+$color-alpha: $blue;
 $color-alpha-low: darken($color-alpha, 10%);
 $color-alpha-high: lighten($color-alpha, 10%);
 
-$color-beta: $color-instagram;
+$color-beta: $green;
 $color-beta-low: darken($color-beta, 10%);
 $color-beta-high: lighten($color-beta, 10%);
 
@@ -60,6 +113,18 @@ $color-gamma-high: lighten($color-gamma, 10%);
 $color-delta: $color-black;
 $color-delta-low: darken($color-delta, 10%);
 $color-delta-high: lighten($color-delta, 10%);
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  primary: $color-alpha,
+  secondary: $color-beta,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+), $theme-colors);
 
 // COLOUR MAP FOR THEME MODIFIERS
 // ---------------------------------|

@@ -44,206 +44,78 @@ block content
 
 					#root
 
-					form
-						.form-group.has-danger
-							label(for='exampleInputEmail1')
-								| Email address
-								span.required *
-							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
-							.form-control-feedback Error!
-						.form-group.has-success
-							label(for='exampleInputEmail1')
-								| Email address
-								span.required *
-							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
-							.form-control-feedback Success!
-						.form-group.has-warning
-							label(for='exampleInputEmail1')
-								| Email address
-								span.required *
-							input#exampleInputEmail1.form-control(type='email', placeholder='Email')
-							.form-control-feedback Warning!
-						.form-group.has-danger
-							label(for='login-email')
-								| Has Danger + Addon
-								span.required *
-							.input-group
-								span.input-group-addon
-									i.fa.fa-user
-								input#login-email.form-control(
-									type='email'
-									placeholder='myemail@email.com'
-									required
-									name='email'
-								)
-							.form-control-feedback Error!
-						.form-group.has-success
-							label(for='login-email')
-								| Has Danger + Addon
-								span.required *
-							.input-group
-								span.input-group-addon
-									i.fa.fa-user
-								input#login-email.form-control(
-									type='email'
-									placeholder='myemail@email.com'
-									required
-									name='email'
-								)
-							.form-control-feedback Success!
-						.form-group.has-warning
-							label(for='login-email')
-								| Has Danger + Addon
-								span.required *
-							.input-group
-								span.input-group-addon
-									i.fa.fa-user
-								input#login-email.form-control(
-									type='email'
-									placeholder='myemail@email.com'
-									required
-									name='email'
-								)
-							.form-control-feedback Warning!
-						.form-group
-							label(for='exampleInputPassword1')
-								| Regular Input
-								span.required *
-							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
-						.form-group.has-loading
-							label(for='exampleInputPassword1')
-								| Has Loading
-								span.required *
-							input#exampleInputPassword1.form-control(type='text', placeholder='Something...')
-						.form-group
-							label(for='exampleInputPassword1')
-								| Password (Disabled)
-								span.required *
-							input#exampleInputPassword1.form-control(type='password', placeholder='Password' disabled)
-						.form-group
-							label(for='exampleInputPassword1')
-								| Custom Select
-								span.required *
-							select.custom-select
-								option(selected disabled) Select...
-								option(value='1') One
-								option(value='2') Two
-								option(value='3') Three
-						.form-group
-							label(for='exampleInputPassword1')
-								| Regular Input + Addon
-								span.required *
-							.input-group
-								span#basic-addon1.input-group-addon
-									i.fa.fa-star
-								input.form-control(type='text' placeholder='Username' aria-describedby='basic-addon1')
-						.form-group
-							label(for='exampleInputPassword1')
-								| Custom File
-								span.required *
-							label.custom-file
-								input#file.custom-file-input(
-									type='file'
-									data-toggle='custom-file'
-									data-target='#file-upload'
-								)
-								span.custom-file-control.custom-file-name#file-upload(
-									data-content='Choose file...'
-								)
-						.form-group
-							label
-								| Textarea
-								span.required *
-							textarea.form-control
-						.form-group
-							label
-								| Checkbox Styles
-								span.required *
-							.checkbox
-								label
-									input(type='checkbox')
-									.checkbox-custom
-									span.checkbox-label Check me out
-								label
-									input(type='checkbox' disabled checked)
-									.checkbox-custom
-									span.checkbox-label Check me out (disabled checked)
-								.form-control-feedback Error!
-						.form-group.has-danger
-							label
-								| Checkbox Styles With Has Danger
-								span.required *
-							.checkbox
-								label
-									input(type='checkbox')
-									.checkbox-custom
-									span.checkbox-label Check me out
-								label
-									input(type='checkbox' disabled checked)
-									.checkbox-custom
-									span.checkbox-label Check me out (disabled checked)
-								.form-control-feedback Error!
-						.form-group
-							label
-								| Radio Styles
-								span.required *
-							.radio
-								label
-									input(
-										type='radio'
-										required
-										name='test1'
-										value='prospective'
-									)
-									.radio-custom
-									span.radio-label Option 1
-								label
-									input(
-										type='radio'
-										required
-										name='test1'
-										value='existing'
-										disabled
-										checked
-									)
-									.radio-custom
-									span.radio-label Option 2 (disabled checked)
-								.form-control-feedback Error!
-						.form-group.has-danger
-							label
-								| Radio Styles With Has Danger
-								span.required *
-							.radio
-								label
-									input(
-										type='radio'
-										required
-										name='test2'
-										value='prospective'
-									)
-									.radio-custom
-									span.radio-label Option 1
-								label
-									input(
-										type='radio'
-										required
-										name='test2'
-										value='existing'
-										disabled
-										checked
-									)
-									.radio-custom
-									span.radio-label Option 2 (disabled checked)
-								.form-control-feedback Error!
-						button.btn(type='submit') Submit
-						button.btn.btn-outline-alpha.btn-loading(type='submit') Loading
-						button.btn.btn-beta.btn-loading(type='submit') Loading
-						button.btn.btn-icon.btn-beta(type='button')
+					form#needs-validation.container(novalidate='')
+						.row
+							.col-md-6.mb-3
+								label(for='validationCustom01') First name
+								input#validationCustom01.form-control(type='text', placeholder='First name', value='Mark', required='')
+							.col-md-6.mb-3
+								label(for='validationCustom02') Last name
+								input#validationCustom02.form-control(type='text', placeholder='Last name', value='Otto', required='')
+						.row
+							.col-md-6.mb-3
+								label(for='validationCustom03') City
+								input#validationCustom03.form-control(type='text', placeholder='City', required='')
+								.invalid-feedback
+									| Please provide a valid city.
+							.col-md-3.mb-3
+								label(for='validationCustom04') State
+								input#validationCustom04.form-control(type='text', placeholder='State', required='')
+								.invalid-feedback
+									| Please provide a valid state.
+							.col-md-3.mb-3
+								label(for='validationCustom05') Zip
+								input#validationCustom05.form-control(type='text', placeholder='Zip', required='')
+								.invalid-feedback
+									| Please provide a valid zip.
+						.row
+							.col
+								label.custom-control.custom-checkbox
+									input.custom-control-input(type='checkbox', required='')
+									span.custom-control-indicator
+									span.custom-control-description Check this custom checkbox
+								.custom-controls-stacked.d-block.my-3
+									label.custom-control.custom-radio
+										input#radioStacked1.custom-control-input(name='radio-stacked', type='radio', required='')
+										span.custom-control-indicator
+										span.custom-control-description Toggle this custom radio
+									label.custom-control.custom-radio
+										input#radioStacked2.custom-control-input(name='radio-stacked', type='radio', required='')
+										span.custom-control-indicator
+										span.custom-control-description Or toggle this other custom radio
+								select.custom-select.d-block.my-3(required='')
+									option(value='') Open this select menu
+									option(value='1') One
+									option(value='2') Two
+									option(value='3') Three
+								label.custom-file
+									input#file.custom-file-input(type='file', required='')
+									span.custom-file-control
+						br
+						button.btn.btn-primary(type='submit') Submit form
+						hr.mt-5.mb-5
+						h6 Button Styles
+						button.btn.btn-alpha.btn-loading(type='button') Loading
+						button.btn.btn-outline-alpha.btn-outline(type='button') Loading
+						button.btn.btn-icon.btn-primary(type='button')
 							i.fa.fa-star
-						button.btn.btn-icon.btn-facebook(type='button')
-							i.fa.fa-facebook
-						button.btn.btn-icon.btn-outline-twitter(type='button')
-							i.fa.fa-twitter
+
+					script.
+						// Example starter JavaScript for disabling form submissions if there are invalid fields
+						(function() {
+						"use strict";
+						window.addEventListener("load", function() {
+						var form = document.getElementById("needs-validation");
+						form.addEventListener("submit", function(event) {
+						if (form.checkValidity() == false) {
+						event.preventDefault();
+						event.stopPropagation();
+						}
+						form.classList.add("was-validated");
+						}, false);
+						}, false);
+						}());
+
 
 					//- include /components/_test
 
