@@ -4,11 +4,12 @@
 // All overwrites & resets for common button elements.
 
 .btn {
+	cursor: pointer;
 
 	// BTN-LOADING
 	// ---------------------------------|
 	&-loading {
-		// cursor: not-allowed;
+		cursor: not-allowed;
 
 		&:after {
 			display: inline-block;
